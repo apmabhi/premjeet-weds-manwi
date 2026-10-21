@@ -1,0 +1,6 @@
+{
+  "name": "Premjeet & Manwi's Royal Wedding Invitation",
+  "description": "A cinematic luxury Indian wedding invitation website celebrating the union of Premjeet and Manwi on 10th December 2026.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
