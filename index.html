@@ -3,86 +3,152 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Premjeet Weds Manwi - 10th Dec 2026</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+<title>Premjeet & Manwi - Wedding Invitation</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:#1a0508;color:#f5e6c8;font-family:'Cormorant Garamond',serif;overflow-x:hidden}
-.petals{position:fixed;inset:0;pointer-events:none;z-index:9998}
-.petal{position:absolute;top:-5%;animation:fall linear infinite}
-@keyframes fall{to{transform:translateY(110vh) rotate(720deg) translateX(80px)}}
-#envScreen{position:fixed;inset:0;background:radial-gradient(ellipse at center,#4a1520 0%,#1a0508 85%);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:10000;transition:transform 1s cubic-bezier(.77,0,.175,1);cursor:pointer}
-#envScreen.hide{transform:translateY(-110%)}
-.envelope{width:320px;height:210px;background:linear-gradient(145deg,#3d0f18,#2a0a10);border:2px solid #d4af37;position:relative;cursor:pointer;margin:20px;box-shadow:0 20px 60px rgba(0,0,0,.8),0 0 30px rgba(212,175,55,.2)}
-.envelope-top{position:absolute;top:0;left:0;width:100%;height:51%;background:linear-gradient(#f9e29b,#d4af37);clip-path:polygon(0 0,50% 100%,100% 0);z-index:2}
-.envelope-body{position:absolute;bottom:0;width:100%;height:100%;background:#2a0a10}
-.seal{position:absolute;bottom:18%;left:50%;transform:translateX(-50%);font-size:44px;z-index:3}
-.tap{color:#d4af37;letter-spacing:4px;font-size:11px;animation:blink 1.5s infinite}
-@keyframes blink{50%{opacity:.3}}
-.countTop{position:sticky;top:0;z-index:100;background:rgba(26,5,8,.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(212,175,55,.25);padding:12px 0;display:flex;flex-direction:column;align-items:center}
-.countRow{display:flex;gap:10px;margin-top:6px}
-.cBox{background:rgba(212,175,55,.08);border:1px solid rgba(212,175,55,.3);padding:7px 14px;min-width:68px;text-align:center;border-radius:4px}
-.cBox b{font-size:20px;color:#f9e29b;display:block}
-.cBox span{font-size:9px;letter-spacing:2px;color:#d4af37}
-.section{padding:40px 14px;display:flex;flex-direction:column;align-items:center;background:radial-gradient(circle at center,#2e0c13 0%,#1a0508 70%)}
-.royalCard{width:94%;max-width:500px;border:1.5px solid #8a6d2b;padding:16px;background:linear-gradient(180deg,#2a0a10,#1e070c);position:relative;box-shadow:0 0 40px rgba(212,175,55,.15)}
-.royalCard:before{content:'';position:absolute;inset:9px;border:1px solid rgba(212,175,55,.35);pointer-events:none}
-.corner{position:absolute;width:24px;height:24px;border:2px solid #d4af37}
-.corner.tl{top:7px;left:7px;border-right:0;border-bottom:0}.corner.tr{top:7px;right:7px;border-left:0;border-bottom:0}.corner.bl{bottom:7px;left:7px;border-right:0;border-top:0}.corner.br{bottom:7px;right:7px;border-left:0;border-top:0}
-.gold{background:linear-gradient(90deg,#f9e29b,#d4af37,#8a6d2b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.badgeDate{border:1px solid rgba(212,175,55,.4);border-radius:999px;padding:11px 26px;display:inline-flex;gap:10px;align-items:center;background:rgba(212,175,55,.07);margin:18px 0;box-shadow:0 0 20px rgba(212,175,55,.15)}
-.photoFrame{width:94%;max-width:460px;border:1.5px solid #d4af37;padding:10px;background:#2a0a10;box-shadow:0 0 30px rgba(212,175,55,.2);position:relative}
-.photoFrame img{width:100%;display:block;border:1px solid rgba(212,175,55,.4)}
-#musicBtn{position:fixed;bottom:18px;right:18px;width:52px;height:52px;border-radius:50%;background:radial-gradient(#e8c766,#8a6d2b);border:2px solid #d4af37;display:flex;align-items:center;justify-content:center;z-index:500;cursor:pointer;font-size:22px;box-shadow:0 6px 20px rgba(0,0,0,.6)}
-.detailBox{width:94%;max-width:500px;border:1px solid rgba(212,175,55,.3);background:rgba(212,175,55,.06);padding:18px;text-align:center;border-radius:8px;margin-top:12px}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: #0d0a1a;
+  color: #fff;
+  font-family: 'Cormorant Garamond', serif;
+  overflow-x: hidden;
+}
+#petals {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+.petal {
+  position: absolute;
+  top: -10%;
+  animation: fall linear infinite;
+}
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(360deg);
+  }
+}
+#countdownBar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: linear-gradient(90deg, #1a102e, #2d1b4e);
+  border-bottom: 1px solid rgba(212,175,55,0.3);
+  padding: 10px;
+  text-align: center;
+  letter-spacing: 3px;
+  font-size: 12px;
+  color: #d4af37;
+}
 </style>
 </head>
 <body>
-<div class="petals" id="petals"></div>
-
-<div id="envScreen">
-  <p style="letter-spacing:5px;font-size:10px;opacity:.6">FORMAL WEDDING ANNOUNCEMENT</p>
-  <h1 style="font-size:30px;color:#f9e29b;margin:10px 0;letter-spacing:2px">THE ROYAL INVITATION</h1>
-  <div style="width:80px;height:1px;background:#d4af37;margin:8px 0"></div>
-  <div class="envelope"><div class="envelope-top"></div><div class="envelope-body"></div><div class="seal">💌</div></div>
-  <div class="tap">TAP ANYWHERE TO OPEN ✉️</div>
-  <p style="margin-top:14px;font-size:11px;opacity:.5">Premjeet & Manwi • 10th December 2026</p>
+<div id="petals"></div>
+<div id="countdownBar">
+  COUNTDOWN: <span id="timer"></span>
+</div>
+<div id="envelopeScreen" onclick="openInvite()" style="position:fixed;inset:0;z-index:200;background:radial-gradient(circle at center,#1e1440,#0d0a1a);display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;transition:all 1s ease">
+  <div style="width:220px;height:150px;background:#f9e29b;position:relative;border-radius:6px;box-shadow:0 20px 60px rgba(0,0,0,0.5)"></div>
+  <p style="margin-top:30px;letter-spacing:4px;color:#d4af37;animation:blink 1.5s infinite">TAP TO OPEN ✨</p>
+  <p style="margin-top:10px;font-size:11px;letter-spacing:2px;opacity:0.6">You are cordially invited</p>
 </div>
 
-<div class="countTop">
-  <p style="letter-spacing:3px;font-size:10px;opacity:.7">COUNTDOWN TO OUR WEDDING</p>
-  <div class="countRow" id="countdown">
-    <div class="cBox"><b id="d">00</b><span>DAYS</span></div>
-    <div class="cBox"><b id="h">00</b><span>HOURS</span></div>
-    <div class="cBox"><b id="m">00</b><span>MINS</span></div>
-    <div class="cBox"><b id="s">00</b><span>SECS</span></div>
+<div class="mainContent" id="main" style="display:none;max-width:700px;margin:0 auto;padding:20px;position:relative;z-index:2">
+  <div style="background:linear-gradient(145deg,#1c1233,#251a44);border:1px solid rgba(212,175,55,0.4);border-radius:18px;padding:40px 24px;text-align:center;margin-top:20px;box-shadow:0 0 40px rgba(212,175,55,0.15)">
+    <p style="font-size:32px;color:#d4af37;margin-bottom:10px">ॐ</p>
+    <p style="letter-spacing:6px;font-size:11px;color:#d4af37;margin-bottom:18px">WITH BLESSINGS OF ELDERS</p>
+    <h1 style="font-family:'Great Vibes',cursive;font-size:58px;color:#f9e29b;line-height:1.1">
+      Premjeet<br>&<br>Manwi
+    </h1>
+    <p style="margin-top:20px;font-size:14px;letter-spacing:3px;opacity:0.8">
+      REQUEST THE PLEASURE OF YOUR PRESENCE<br>
+      AT THEIR WEDDING CELEBRATION
+    </p>
   </div>
-</div>
-
-<div class="section">
-  <p style="letter-spacing:4px;font-size:9px;opacity:.6">FORMAL WEDDING ANNOUNCEMENT</p>
-  <h2 class="gold" style="font-size:34px;margin:4px 0">THE ROYAL INVITATION</h2>
-  <div style="width:90px;height:1px;background:linear-gradient(90deg,transparent,#d4af37,transparent);margin:6px 0 16px"></div>
-  <div class="royalCard">
-    <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
-    <div style="padding:22px 12px;text-align:center">
-      <p style="font-size:12px;letter-spacing:3px;color:#c9a86a">॥ ॐ श्री गणेशाय नमः ॥</p>
-      <div style="margin:14px 0;color:#d4af37;font-size:22px">🪷</div>
-      <p style="font-style:italic;font-size:19px;color:#e9d5b8">With the Blessings of Our Families</p>
-      <p style="letter-spacing:3px;font-size:10px;color:#c9a86a;margin-top:4px">TOGETHER WITH THEIR FAMILIES</p>
-      <div style="display:flex;align-items:center;justify-content:center;gap:12px;margin:20px 0"><div style="width:50px;height:1px;background:linear-gradient(90deg,transparent,#d4af37)"></div><span style="color:#d4af37">✦ 🪷 ✦</span><div style="width:50px;height:1px;background:linear-gradient(90deg,#d4af37,transparent)"></div></div>
-      <h1 class="gold" style="font-size:50px;line-height:1">PREMJEET</h1>
-      <div style="font-size:34px;color:#f5e6c8;margin:6px 0;font-family:'Great Vibes',cursive">&</div>
-      <h1 class="gold" style="font-size:50px;line-height:1">MANWI</h1>
-      <div style="display:flex;align-items:center;justify-content:center;gap:12px;margin:20px 0"><div style="width:50px;height:1px;background:linear-gradient(90deg,transparent,#d4af37)"></div><span style="color:#d4af37">✦ 🪷 ✦</span><div style="width:50px;height:1px;background:linear-gradient(90deg,#d4af37,transparent)"></div></div>
-      <p style="font-style:italic;font-size:19px;color:#e9d5b8">Joyfully Invite You to Celebrate Their</p>
-      <p style="font-size:22px;margin-top:2px;color:#f5e6c8">Wedding</p>
-      <div class="badgeDate"><span style="color:#d4af37">✦</span><span style="letter-spacing:3px;font-weight:700;font-size:14px">10TH DECEMBER 2026</span><span style="color:#d4af37">✦</span></div>
-      <div style="width:100%;height:1px;background:linear-gradient(90deg,transparent,rgba(212,175,55,.3),transparent);margin:16px 0"></div>
-      <p style="font-style:italic;font-size:12px;color:#b9a080;line-height:1.6">"May love, trust, and divine grace guide our steps as we begin our holy union."</p>
-      <p style="font-size:11px;letter-spacing:2px;color:#d4af37;margin-top:10px">💛 SHUBH VIVAH 💛</p>
+  <div style="margin-top:40px;text-align:center">
+    <h2 style="letter-spacing:5px;color:#d4af37;font-size:13px">OUR BEAUTIFUL MOMENT</h2>
+    <div style="margin-top:16px;border-radius:16px;overflow:hidden;border:1px solid rgba(212,175,55,0.3);height:380px;background:#1a102e">
+      <img src="couple.jpg" style="width:100%;height:100%;object-fit:cover">
     </div>
   </div>
+
+  <div style="margin-top:40px;display:grid;grid-template-columns:1fr 1fr;gap:16px">
+    <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(212,175,55,0.2);border-radius:14px;padding:18px;text-align:center">
+      <h3 style="color:#d4af37;letter-spacing:2px;font-size:12px">📅 DATE</h3>
+      <p style="margin-top:6px;font-size:18px">
+        <b style="color:#f9e29b">10th December</b><br>
+        <span style="font-size:13px;opacity:0.8">Wednesday, 2025</span>
+      </p>
+    </div>
+    <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(212,175,55,0.2);border-radius:14px;padding:18px;text-align:center">
+      <h3 style="color:#d4af37;letter-spacing:2px;font-size:12px">⏰ TIME</h3>
+      <p style="margin-top:6px;font-size:18px">
+        <b style="color:#f9e29b">7:00 PM</b><br>
+        <span style="font-size:13px;opacity:0.8">Onwards</span>
+      </p>
+    </div>
+  </div>
+    <div style="margin-top:30px;text-align:center">
+    <p style="margin-top:32px;letter-spacing:4px;font-size:12px;color:#d4af37">AWAITING YOUR BLESSINGS</p>
+    <h3 style="font-family:'Great Vibes',cursive;font-size:34px;color:#f9e29b;margin-top:8px">Premjeet & Manwi</h3>
+    
+    <p style="margin-top:28px;font-size:10px;letter-spacing:3px;opacity:0.5;text-align:center;border-top:1px solid rgba(212,175,55,0.2);padding-top:16px">
+      ✦ CREATED WITH LOVE BY ABHINEET KUMAR ✦
+    </p>
+  </div>
 </div>
 
-<div
+<audio id="music" loop>
+  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8a73467.mp3" type="audio/mpeg">
+</audio>
+
+<button onclick="toggleMusic()" id="musicBtn" style="position:fixed;bottom:20px;right:20px;z-index:50;background:#d4af37;color:#000;border:none;width:44px;height:44px;border-radius:50%">♫</button>
+
+<script>
+function openInvite() {
+  document.getElementById('envelopeScreen').style.transform = 'scale(2)';
+  document.getElementById('envelopeScreen').style.opacity = '0';
+  setTimeout(() => {
+    document.getElementById('envelopeScreen').style.display = 'none';
+    document.getElementById('main').style.display = 'block';
+  }, 800);
+  document.getElementById('music').play().catch(()=>{});
+  createPetals();
+}
+function createPetals() {
+  const c = document.getElementById('petals');
+  for(let i=0;i<25;i++) {
+    let p = document.createElement('div');
+    p.className = 'petal';
+    p.innerHTML = '🌸';
+    p.style.left = Math.random()*100+'%';
+    p.style.animationDuration = (4+Math.random()*6)+'s';
+    p.style.fontSize = (14+Math.random()*14)+'px';
+    c.appendChild(p);
+  }
+}
+function toggleMusic() {
+  let a = document.getElementById('music');
+  if(a.paused) a.play(); else a.pause();
+}
+let dest = new Date("Dec 10, 2025 19:00:00").getTime();
+setInterval(() => {
+  let n = new Date().getTime();
+  let d = dest - n;
+  let days = Math.floor(d/(1000*60*60*24));
+  let h = Math.floor((d%(1000*60*60*24))/(1000*60*60));
+  let m = Math.floor((d%(1000*60*60))/(1000*60));
+  let s = Math.floor((d%(1000*60))/1000);
+  document.getElementById('timer').innerHTML = days+"D "+h+"H "+m+"M "+s+"S";
+}, 1000);
+</script>
+</body>
+</html>
