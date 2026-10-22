@@ -2,360 +2,560 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Premjeet Weds Manwi - Royal Invitation</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Premjeet & Manwi - Royal Wedding Invitation</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@200;300;400;500;600;700&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{
-  background:#0e060d;
-  color:#f5e6c4;
-  font-family:'Cormorant Garamond',serif;
-  overflow-x:hidden;
-}
-/* ENVELOPE */
-#envelopeOverlay{
-  position:fixed;inset:0;z-index:10000;
-  background:radial-gradient(circle at 50% 30%,#4a1a2e,#1a0a0f);
-  display:flex;flex-direction:column;
-  align-items:center;justify-content:center;
-  transition:all 1.2s cubic-bezier(.7,0,.3,1);
-  cursor:pointer;
-}
-#envelopeOverlay.opened{
-  transform:translateY(-105%);
-  opacity:0;pointer-events:none;
-}
-.envelope-designer{
-  position:absolute;top:18px;left:50%;
-  transform:translateX(-50%);
-  font-family:'Montserrat';font-size:8px;
-  letter-spacing:4px;
-  color:rgba(212,175,55,.55);
-  border:1px solid rgba(212,175,55,.18);
-  padding:7px 16px;border-radius:22px;
-  background:rgba(0,0,0,.35);
-}
-.envelope-wrapper{
-  position:relative;width:330px;height:230px;
-  margin-top:24px;perspective:1200px;
-}
-.envelope{
-  position:relative;width:100%;height:100%;
-  background:linear-gradient(180deg,#f9e29b,#d4af37);
-  border-radius:8px;
-  box-shadow:0 24px 70px rgba(0,0,0,.65);
-}
-.envelope-flap{
-  position:absolute;top:0;left:0;width:100%;height:58%;
-  background:linear-gradient(180deg,#f9e29b,#d4af37);
-  clip-path:polygon(0 0,100% 0,50% 102%);
-  transform-origin:top center;
-  transition:transform .95s;z-index:4;
-  display:flex;justify-content:center;padding-top:20px;
-}
-#envelopeOverlay.opened .envelope-flap{
-  transform:rotateX(185deg);
-}
-.envelope-letter{
-  position:absolute;top:12%;left:6%;right:6%;bottom:10%;
-  background:#fffef8;
-  border:1px solid rgba(212,175,55,.35);
-  border-radius:5px;padding:20px 14px;
-  text-align:center;
-  transform:translateY(38%);
-  transition:transform .95s .32s;z-index:2;
-}
-#envelopeOverlay.opened .envelope-letter{
-  transform:translateY(-45%);
-}
-.wax-seal{
-  width:58px;height:58px;margin:12px auto;
-  background:radial-gradient(circle,#f9e29b,#a07d1a);
-  border-radius:50%;display:flex;
-  align-items:center;justify-content:center;
-  font-size:22px;
-}
-.tap-text{
-  margin-top:32px;text-align:center;
-  animation:bounceTap 2.2s infinite;
-}
-@keyframes bounceTap{
-  0%,100%{transform:translateY(0)}
-  50%{transform:translateY(-7px)}
-}
-/* TOP COUNTDOWN */
-.top-countdown{
-  position:sticky;top:0;z-index:1000;
-  background:#1a0a0f;
-  border-bottom:2px solid rgba(212,175,55,.35);
-  padding:14px 8px 16px;
-  text-align:center;overflow:hidden;
-}
-.top-countdown .label{
-  font-family:'Montserrat';font-size:8px;
-  letter-spacing:5px;color:#d4af37;
-  margin-bottom:12px;font-weight:600;
-  position:relative;z-index:2;
-}
-.timer-grid{
-  display:flex;justify-content:center;
-  gap:12px;flex-wrap:wrap;
-  max-width:560px;margin:0 auto;
-  position:relative;z-index:2;
-}
-.timer-box{
-  width:92px;height:92px;
-  background:linear-gradient(180deg,#2d0e1a,#1e0a12);
-  border:1px solid rgba(212,175,55,.45);
-  border-radius:6px;position:relative;
-  display:flex;flex-direction:column;
-  align-items:center;justify-content:center;
-  box-shadow:0 6px 20px rgba(0,0,0,.5);
-}
-.timer-box::before,.timer-box::after{
-  content:'';position:absolute;
-  width:4px;height:4px;background:#d4af37;
-  border-radius:50%;box-shadow:0 0 6px #d4af37;
-}
-.timer-box::before{top:6px;left:6px}
-.timer-box::after{top:6px;right:6px}
-.timer-box .num{
-  font-size:38px;font-weight:700;line-height:1;
-  background:linear-gradient(180deg,#f9e29b,#d4af37,#a07d1a);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-  color:#f9e29b;
-}
-.timer-box .txt{
-  font-family:'Montserrat';font-size:8.5px;
-  letter-spacing:2px;
-  color:rgba(245,230,196,.7);
-  margin-top:6px;
-}
-  /* SOFT PANKHURI ONLY - NO EMOJI */
+html{scroll-behavior:smooth}
+body{background:#0a0408;color:#f5e6c4;font-family:'Montserrat',sans-serif;overflow-x:hidden;position:relative}
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:#1a0a0f}
+::-webkit-scrollbar-thumb{background:linear-gradient(#d4af37,#a07d1a);border-radius:10px}
+
+/* SOFT PANKHURI - PURE PAGE ME - FIXED */
 .soft-petal{
-  position:absolute;top:-20px;
-  width:12px;height:8px;
-  background:radial-gradient(ellipse at 30% 30%,#ffc2d1 0%,#ffb3c6 40%,#ff8fab 100%);
+  position:fixed;
+  top:-30px;
+  width:14px;
+  height:11px;
+  background:radial-gradient(ellipse at 30% 30%,#ffc2d1 0%,#ffb3c6 30%,#ff8fab 70%,#fb6f92 100%);
   border-radius:50% 50% 50% 50% / 60% 60% 40% 40%;
-  opacity:.9;filter:blur(.2px);
-  pointer-events:none;z-index:15;
-  animation:softFall linear infinite;
-}
-.soft-petal::after{
-  content:'';position:absolute;
-  top:2px;left:3px;width:4px;height:2px;
-  background:rgba(255,255,255,.6);
-  border-radius:50%;
+  opacity:0.95;
+  pointer-events:none;
+  z-index:999999;
+  animation:softFall linear forwards;
+  filter:drop-shadow(0 2px 3px rgba(0,0,0,.2));
 }
 @keyframes softFall{
-  0%{transform:translateY(-10px) translateX(0) rotate(0deg) scale(.8);opacity:0}
-  10%{opacity:.95}
-  100%{transform:translateY(130px) translateX(18px) rotate(380deg) scale(.9);opacity:0}
+  0%{transform:translateY(-30px) translateX(0px) rotate(0deg) rotateY(0deg);opacity:0}
+  10%{opacity:1}
+  25%{transform:translateY(25vh) translateX(20px) rotate(180deg) rotateY(90deg)}
+  50%{transform:translateY(50vh) translateX(-15px) rotate(360deg) rotateY(180deg)}
+  75%{transform:translateY(75vh) translateX(25px) rotate(540deg) rotateY(270deg)}
+  90%{opacity:0.9}
+  100%{transform:translateY(110vh) translateX(10px) rotate(720deg) rotateY(360deg);opacity:0}
 }
-.navbar{
-  display:flex;justify-content:space-between;
-  padding:11px 18px;
-  background:rgba(18,6,12,.85);
-  border-bottom:1px solid rgba(212,175,55,.14);
-  font-family:'Montserrat';font-size:8.5px;
-  letter-spacing:3px;color:rgba(245,230,196,.65);
+
+/* ENVELOPE OVERLAY - ORIGINAL */
+#envelopeOverlay{
+  position:fixed;inset:0;z-index:9999;
+  background:radial-gradient(ellipse at 50% 20%,#4a1a2e 0%,#2d0e1a 30%,#1a0a0f 70%,#0e060d 100%);
+  display:flex;align-items:center;justify-content:center;flex-direction:column;
+  transition:opacity 1.2s ease, visibility 1.2s;
 }
-.hero{
-  background:radial-gradient(circle at 50% 20%,#4a1a2e,#2a1020,#1a0a0f);
-  padding:68px 14px 64px;text-align:center;
+#envelopeOverlay::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(circle at 50% 50%,rgba(212,175,55,.08) 0%,transparent 70%);
+  pointer-events:none;
 }
-.royal-card{
-  max-width:640px;margin:30px auto 0;
-  background:linear-gradient(180deg,rgba(74,26,46,.94),rgba(42,14,24,.98));
-  border:1px solid rgba(212,175,55,.32);
-  border-radius:8px;padding:44px 24px 38px;
+.envelope-wrapper{text-align:center;animation:envelopeFloat 3s ease-in-out infinite}
+@keyframes envelopeFloat{0%,100%{transform:translateY(0px)}50%{transform:translateY(-14px)}}
+.envelope{
+  width:340px;height:220px;
+  background:linear-gradient(180deg,#3d1a28 0%,#2a0e18 100%);
+  position:relative;cursor:pointer;
+  border:1px solid rgba(212,175,55,.35);
+  box-shadow:0 40px 100px rgba(0,0,0,.8),0 0 0 1px rgba(212,175,55,.15) inset,0 2px 20px rgba(212,175,55,.1);
+  border-radius:4px;
+  transform-style:preserve-3d;
+}
+.env-flap{
+  position:absolute;top:0;left:0;width:100%;height:62%;
+  background:linear-gradient(180deg,#4a2240 0%,#3d1a28 50%,#2a0e18 100%);
+  clip-path:polygon(0 0,100% 0,50% 100%);
+  transform-origin:top center;transition:transform 0.9s cubic-bezier(0.68,-0.55,0.265,1.55);
+  z-index:3;border-bottom:1px solid rgba(212,175,55,.25);
+  box-shadow:0 10px 30px rgba(0,0,0,.4);
+}
+.envelope.open .env-flap{transform:rotateX(180deg)}
+.env-back{
+  position:absolute;inset:0;
+  background:linear-gradient(180deg,#2a0e18,#1e0a12);
+  z-index:1;border-radius:4px;
+}
+.env-letter{
+  position:absolute;top:14px;left:50%;transform:translateX(-50%);
+  width:86%;height:82%;
+  background:linear-gradient(180deg,#fffaf0 0%,#fff8e8 20%,#f9e8c8 100%);
+  display:flex;align-items:center;justify-content:center;flex-direction:column;
+  transition:transform 0.9s cubic-bezier(0.68,-0.55,0.265,1.55) 0.35s, box-shadow 0.9s 0.35s;
+  z-index:2;border-radius:2px;
+  box-shadow:0 2px 10px rgba(0,0,0,.15);
+  border:1px solid rgba(212,175,55,.15);
+}
+.envelope.open .env-letter{transform:translateX(-50%) translateY(-95px);box-shadow:0 20px 40px rgba(0,0,0,.3)}
+.env-seal{
+  width:46px;height:46px;
+  background:radial-gradient(circle at 30% 30%,#f9e29b,#d4af37 60%,#a07d1a);
+  border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-size:20px;box-shadow:0 4px 15px rgba(212,175,55,.4),0 0 0 3px rgba(212,175,55,.15);
+  border:1px solid rgba(255,255,255,.3);margin-bottom:8px;
+}
+.env-text{font-family:'Great Vibes';color:#2a0e18;font-size:22px;margin-top:4px}
+.env-sub{font-family:'Montserrat';font-size:6px;letter-spacing:3px;color:#8b5a2b;margin-top:2px;font-weight:600}
+.tap-text{margin-top:30px;font-family:'Montserrat';font-size:9px;letter-spacing:5px;color:#d4af37;animation:tapBlink 1.8s ease-in-out infinite;font-weight:500}
+@keyframes tapBlink{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(0.98)}}
+.env-designer{font-family:'Montserrat';font-size:7px;letter-spacing:4px;color:rgba(212,175,55,.45);margin-top:14px;font-weight:300}
+
+/* COUNTDOWN - EK LINE ME - CHHOTA - THURSDAY WALA - NOT STICKY */
+.countdown-section{
   position:relative;
-  box-shadow:0 28px 90px rgba(0,0,0,.75);
+  background:radial-gradient(ellipse at 50% 0%,#1e0c14 0%,#1a0a0f 40%,#0e060d 100%);
+  padding:42px 16px 48px;
+  text-align:center;
+  border-top:1px solid rgba(212,175,55,.12);
+  border-bottom:1px solid rgba(212,175,55,.12);
+  overflow:hidden;
 }
-.corner{
-  position:absolute;width:26px;height:26px;
-  border-color:#d4af37;border-style:solid;opacity:.65;
+.countdown-section::before{
+  content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);
+  width:80%;height:1px;background:linear-gradient(90deg,transparent,rgba(212,175,55,.2),transparent);
 }
-.corner.tl{top:8px;left:8px;border-width:2px 0 0 2px}
-.corner.tr{top:8px;right:8px;border-width:2px 2px 0 0}
-.corner.bl{bottom:8px;left:8px;border-width:0 0 2px 2px}
-.corner.br{bottom:8px;right:8px;border-width:0 2px 2px 0}
-.couple-names{
-  font-size:52px;font-weight:700;
-  line-height:.85;color:#f9e29b;
+.countdown-tagline{
+  font-family:'Cormorant Garamond';font-style:italic;font-size:15px;
+  color:rgba(245,230,196,.68);max-width:520px;margin:0 auto;line-height:1.7;
+  font-weight:400;letter-spacing:0.3px;
 }
-.couple-names span.and{
-  font-family:'Great Vibes';font-size:34px;
-  color:#d4af37;display:block;margin:6px 0;
+.gold-divider{
+  width:340px;max-width:80%;height:1px;
+  background:linear-gradient(90deg,transparent 0%,rgba(212,175,55,.15) 20%,#d4af37 50%,rgba(212,175,55,.15) 80%,transparent 100%);
+  margin:26px auto;position:relative;
 }
-.music-btn{
-  position:fixed;bottom:20px;right:20px;z-index:9999;
-  width:56px;height:56px;border-radius:50%;
-  background:linear-gradient(145deg,#f9e29b,#d4af37);
-  border:2px solid #fff;font-size:22px;
-  box-shadow:0 10px 28px rgba(0,0,0,.55);
-  cursor:pointer;
+.gold-divider::before{
+  content:'❦';position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  background:#1a0a0f;padding:0 14px;font-size:13px;color:#d4af37;
+  font-family:'Cormorant Garamond';
 }
-</style>
+.timer-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:12px;max-width:640px;margin:0 auto;
+}
+  .timer-box{
+  width:100%;height:96px;
+  background:linear-gradient(180deg,#2d1220 0%,#25101a 50%,#1e0c14 100%);
+  border:1px solid rgba(212,175,55,.38);
+  border-radius:8px;position:relative;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  box-shadow:0 10px 30px rgba(0,0,0,.6),0 0 0 1px rgba(212,175,55,.08) inset,0 1px 0 rgba(255,255,255,.05) inset;
+  transition:transform 0.3s ease, box-shadow 0.3s ease;
+  overflow:hidden;
+}
+.timer-box::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(212,175,55,.3),transparent)}
+.timer-box::after{content:'';position:absolute;bottom:6px;left:50%;transform:translateX(-50%);width:30%;height:1px;background:linear-gradient(90deg,transparent,rgba(212,175,55,.2),transparent)}
+.timer-box:hover{transform:translateY(-2px);box-shadow:0 14px 36px rgba(0,0,0,.7),0 0 0 1px rgba(212,175,55,.15) inset}
+.corner-dot{position:absolute;width:4px;height:4px;background:#d4af37;border-radius:50%;box-shadow:0 0 6px rgba(212,175,55,.6)}
+.dot-tl{top:7px;left:7px}.dot-tr{top:7px;right:7px}.dot-bl{bottom:7px;left:7px}.dot-br{bottom:7px;right:7px}
+.timer-box .num{
+  font-size:34px;font-weight:700;line-height:1;
+  background:linear-gradient(180deg,#fff8c4 0%,#f9e29b 30%,#d4af37 70%,#b8962e 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  font-family:'Cormorant Garamond';letter-spacing:1px;
+  filter:drop-shadow(0 2px 4px rgba(0,0,0,.3));
+}
+.timer-box .txt{
+  font-family:'Montserrat';font-size:8px;letter-spacing:2.5px;
+  color:rgba(245,230,196,.62);margin-top:6px;font-weight:500;
+}
+.timer-date{
+  margin-top:28px;font-family:'Montserrat';font-size:9px;letter-spacing:3.5px;
+  color:rgba(212,175,55,.75);font-weight:500;
+}
+@media(max-width:480px){
+  .timer-grid{gap:8px;max-width:96%}
+  .timer-box{height:82px;border-radius:6px}
+  .timer-box .num{font-size:27px}
+  .timer-box .txt{font-size:7px;letter-spacing:2px}
+  .countdown-tagline{font-size:13px}
+  .envelope{width:300px;height:200px}
+}
+
+/* MAIN WRAPPER */
+.main-wrap{max-width:440px;margin:0 auto;padding:22px 16px 70px;position:relative}
+.main-wrap::before{
+  content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);
+  width:1px;height:100%;background:linear-gradient(180deg,transparent,rgba(212,175,55,.08) 20%,rgba(212,175,55,.08) 80%,transparent);
+  pointer-events:none;
+}
+.designer-top{
+  text-align:center;font-family:'Montserrat';font-size:7px;letter-spacing:5px;
+  color:rgba(212,175,55,.45);margin:14px 0 16px;font-weight:400;
+  position:relative;
+}
+.designer-top::before,.designer-top::after{
+  content:'•';position:absolute;top:50%;transform:translateY(-50%);color:rgba(212,175,55,.25);font-size:8px;
+}
+.designer-top::before{left:30%}.designer-top::after{right:30%}
+
+/* ROYAL CARD - ORIGINAL DESIGN */
+.royal-card{
+  background:linear-gradient(180deg,rgba(74,26,46,0.94) 0%,rgba(58,20,36,0.96) 30%,rgba(42,14,24,0.98) 100%);
+  border:1px solid rgba(212,175,55,.26);border-radius:14px;
+  padding:32px 24px 28px;text-align:center;
+  box-shadow:0 32px 100px rgba(0,0,0,.6),0 0 0 1px rgba(212,175,55,.08) inset,0 1px 0 rgba(255,255,255,.06) inset;
+  position:relative;overflow:hidden;
+}
+.royal-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(212,175,55,.3),transparent);
+}
+.royal-card::after{
+  content:'';position:absolute;bottom:0;left:10%;right:10%;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(212,175,55,.15),transparent);
+}
+.om{
+  font-family:'Cormorant Garamond';color:#d4af37;font-size:15px;letter-spacing:4px;
+  font-weight:600;position:relative;display:inline-block;
+}
+.om::before,.om::after{content:'—';position:absolute;top:50%;transform:translateY(-50%);color:rgba(212,175,55,.3);font-size:10px;letter-spacing:0}
+.om::before{left:-20px}.om::after{right:-20px}
+.couple-title{
+  font-family:'Great Vibes';font-size:48px;color:#f9e29b;margin-top:20px;line-height:1.1;
+  filter:drop-shadow(0 2px 8px rgba(0,0,0,.3));
+}
+.couple-title span{
+  background:linear-gradient(180deg,#fff8c4 0%,#f9e29b 25%,#d4af37 60%,#b8962e 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  display:inline-block;
+}
+.couple-subtitle{
+  font-family:'Montserrat';font-size:9px;letter-spacing:5px;
+  color:rgba(212,175,55,.6);margin-top:8px;font-weight:400;
+}
+.couple-img-wrapper{position:relative;margin:22px 0;border-radius:10px;overflow:hidden;padding:3px;background:linear-gradient(180deg,rgba(212,175,55,.3),rgba(212,175,55,.1));}
+.couple-img{
+  width:100%;height:320px;object-fit:cover;border-radius:8px;display:block;
+  filter:saturate(1.05) contrast(1.05);
+}
+.img-overlay{
+  position:absolute;inset:3px;border-radius:8px;
+  background:linear-gradient(180deg,transparent 60%,rgba(14,6,13,.4) 100%);
+  pointer-events:none;
+}
+.date-card{
+  margin-top:18px;padding:16px 14px;
+  border:1px solid rgba(212,175,55,.22);border-radius:10px;
+  background:linear-gradient(180deg,rgba(0,0,0,.25),rgba(0,0,0,.15));
+  position:relative;overflow:hidden;
+}
+.date-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(212,175,55,.25),transparent);
+}
+.date-card h3{
+  font-family:'Great Vibes';font-size:28px;color:#f9e29b;
+  letter-spacing:0.5px;
+}
+.date-card p{
+  font-family:'Montserrat';font-size:9px;letter-spacing:3.5px;
+  color:rgba(245,230,196,.6);margin-top:6px;font-weight:400;
+}
+.venue-section{margin-top:22px;padding-top:22px;border-top:1px solid rgba(212,175,55,.12)}
+.venue-title{font-family:'Montserrat';font-size:8px;letter-spacing:4px;color:#d4af37;margin-bottom:12px;font-weight:600}
+.venue{
+  font-size:11px;line-height:1.9;color:rgba(245,230,196,.72);
+  font-family:'Montserrat';font-weight:300;
+}
+.venue p{margin:3px 0}
+.venue-icon{color:#d4af37;margin-right:6px}
+.designer-bottom{
+  text-align:center;font-family:'Montserrat';font-size:7px;letter-spacing:5px;
+  color:rgba(212,175,55,.45);margin-top:22px;font-weight:300;
+}
+  </style>
 </head>
 <body>
 
+<!-- PASSWORD OVERLAY - WHATSAPP REQUEST SYSTEM - +917781093629 -->
+<div id="passOverlay" style="position:fixed;inset:0;z-index:20000;background:radial-gradient(ellipse at 50% 20%,#4a1a2e 0%,#2d0e1a 30%,#1a0a0f 70%,#0e060d 100%);display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;padding:22px;">
+  <div style="background:linear-gradient(180deg,rgba(74,26,46,.96) 0%,rgba(58,20,36,.98) 40%,rgba(42,14,24,.99) 100%);border:1px solid rgba(212,175,55,.32);border-radius:16px;padding:36px 28px;max-width:380px;width:100%;box-shadow:0 40px 120px rgba(0,0,0,.85),0 0 0 1px rgba(212,175,55,.1) inset;position:relative;overflow:hidden;">
+    <div style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(212,175,55,.4),transparent)"></div>
+    <p style="font-family:'Montserrat';font-size:8px;letter-spacing:5px;color:#d4af37;font-weight:600;">🔒 PRIVATE & SECURE</p>
+    <h2 style="font-family:'Great Vibes';font-size:36px;color:#f9e29b;margin-top:12px;letter-spacing:0.5px;">Royal Invitation</h2>
+    <p style="font-family:'Cormorant Garamond';font-style:italic;font-size:13px;color:rgba(245,230,196,.65);margin-top:6px;line-height:1.5;">This invitation is locked with love</p>
+    <p style="font-family:'Montserrat';font-size:9px;letter-spacing:2px;color:rgba(245,230,196,.55);margin-top:10px;line-height:1.7;">Only our special guests can open it<br>Please request password from host</p>
+    
+    <a href="https://wa.me/917781093629?text=Hi%20Abhineet%20Bhai%2C%20mujhe%20Premjeet%20%26%20Manwi%20ki%20shaadi%20ka%20invitation%20ka%20password%20chahiye%20%F0%9F%94%90%20Please%20send%20kardo%20%F0%9F%99%8F" target="_blank" style="display:flex;align-items:center;justify-content:center;gap:8px;margin-top:22px;width:100%;padding:13px 0;border-radius:28px;background:linear-gradient(180deg,#25D366,#128C7E);color:#fff;text-decoration:none;font-family:'Montserrat';font-weight:700;font-size:11px;letter-spacing:1px;box-shadow:0 8px 20px rgba(37,211,102,.35);transition:transform 0.2s;">
+      <span style="font-size:14px;">💬</span> REQUEST PASSWORD ON WHATSAPP
+    </a>
+    <p style="font-family:'Montserrat';font-size:7px;color:rgba(245,230,196,.38);margin-top:8px;letter-spacing:0.5px;">Tap karte hi +91 77810 93629 pe message jayega - Abhineet Kumar</p>
+
+    <div style="width:100%;height:1px;background:linear-gradient(90deg,transparent,rgba(212,175,55,.25),transparent);margin:24px 0;"></div>
+
+    <p style="font-family:'Montserrat';font-size:8px;letter-spacing:3px;color:rgba(212,175,55,.6);margin-bottom:10px;">ENTER PASSWORD BELOW</p>
+    <input id="passInput" type="password" placeholder="••••••••" style="width:100%;padding:14px 20px;border-radius:28px;border:1px solid rgba(212,175,55,.38);background:linear-gradient(180deg,rgba(0,0,0,.4),rgba(0,0,0,.3));color:#f9e29b;text-align:center;outline:none;font-family:'Montserrat';letter-spacing:4px;font-size:14px;box-shadow:0 0 0 1px rgba(212,175,55,.08) inset;">
+    <button onclick="checkPass()" style="margin-top:14px;width:100%;padding:14px 0;border-radius:28px;background:linear-gradient(180deg,#fff8c4 0%,#f9e29b 20%,#d4af37 70%,#b8962e 100%);border:none;font-weight:800;cursor:pointer;font-family:'Montserrat';letter-spacing:2px;color:#2a0e18;box-shadow:0 8px 20px rgba(212,175,55,.35);font-size:11px;">🔓 UNLOCK ENVELOPE</button>
+    <p id="passErr" style="color:#ff8fab;margin-top:12px;font-size:11px;display:none;font-family:'Montserrat';font-weight:500;">❌ Wrong Password! Please check WhatsApp</p>
+    
+    <div style="margin-top:20px;display:flex;align-items:center;justify-content:center;gap:10px;">
+      <div style="width:30px;height:1px;background:linear-gradient(90deg,transparent,rgba(212,175,55,.2))"></div>
+      <p style="font-family:'Montserrat';font-size:6px;letter-spacing:4px;color:rgba(212,175,55,.35);">DESIGNED BY ABHINEET KUMAR</p>
+      <div style="width:30px;height:1px;background:linear-gradient(90deg,rgba(212,175,55,.2),transparent)"></div>
+    </div>
+  </div>
+  <p style="font-family:'Montserrat';font-size:6px;letter-spacing:3px;color:rgba(212,175,55,.25);margin-top:18px;">🔐 Secured with love - Premjeet & Manwi</p>
+</div>
+
+<!-- ENVELOPE OVERLAY -->
 <div id="envelopeOverlay" onclick="openEnvelope()">
-<div class="envelope-designer">DESIGNED BY ABHINEET KUMAR</div>
-<div class="envelope-wrapper">
-<div class="envelope">
-<div class="envelope-flap">👑</div>
-<div class="envelope-letter">
-<p style="font-size:9px;letter-spacing:3px;color:#d4af37;font-weight:600">YOU ARE INVITED</p>
-<h3 style="font-size:27px;color:#4a1a2e;margin-top:10px;line-height:1">
-Premjeet<br><span style="font-family:'Great Vibes';font-size:20px;color:#a07d1a">&</span><br>Manwi
-</h3>
-<div class="wax-seal">❤</div>
-<p style="font-size:8px;letter-spacing:2px;color:#a07d1a">10TH DECEMBER 2026</p>
-</div>
-</div>
-</div>
-<div class="tap-text">
-<p style="font-family:'Great Vibes';font-size:32px;color:#f9e29b">Tap to Open</p>
-<p style="font-family:'Montserrat';font-size:9px;letter-spacing:4px;color:#d4af37;margin-top:10px;border:1px solid rgba(212,175,55,.28);padding:9px 20px;border-radius:24px;background:rgba(0,0,0,.35)">✦ A ROYAL INVITATION AWAITS ✦</p>
-</div>
+  <div class="envelope-wrapper">
+    <div class="envelope" id="envelope">
+      <div class="env-back"></div>
+      <div class="env-flap"></div>
+      <div class="env-letter">
+        <div class="env-seal">💌</div>
+        <span class="env-text">Premjeet & Manwi</span>
+        <span class="env-sub">ARE GETTING MARRIED</span>
+      </div>
+    </div>
+    <p class="tap-text">✨ TAP TO OPEN ROYAL INVITATION ✨</p>
+    <p class="env-designer">DESIGNED BY ABHINEET KUMAR</p>
+  </div>
 </div>
 
-<div class="top-countdown" id="countdownWrap">
-<p class="label">✦ OUR ROYAL WEDDING COUNTDOWN ✦</p>
-<div class="timer-grid" id="timer"></div>
+<!-- COUNTDOWN SECTION - EK LINE ME - THURSDAY - CHHOTA - NON STICKY -->
+<div class="countdown-section" id="countdownWrap">
+  <p class="countdown-tagline">Every passing second brings us closer to the most auspicious and joyous day of our lives, when two souls become one.</p>
+  <div class="gold-divider"></div>
+  <div class="timer-grid" id="timer">
+    <!-- JS will fill -->
+  </div>
+  <p class="timer-date">✨ THURSDAY, 10TH DECEMBER 2026 ✨</p>
+  <p style="font-family:'Montserrat';font-size:7px;letter-spacing:2px;color:rgba(245,230,196,.35);margin-top:8px;">Gopalganj, Bihar - Save The Date</p>
 </div>
 
-<div class="navbar">
-<span>PREMJEET ❤ MANWI</span>
-<span style="color:#d4af37">BY ABHINEET KUMAR</span>
-</div>
-  <div class="hero">
-<p style="font-family:'Montserrat';font-size:8px;letter-spacing:6px;color:#d4af37">FORMAL WEDDING ANNOUNCEMENT</p>
-<h2 style="font-size:36px;font-weight:700;color:#f9e29b;margin-top:8px">THE ROYAL INVITATION</h2>
-<div style="width:60px;height:1px;background:linear-gradient(90deg,transparent,#d4af37,transparent);margin:14px auto"></div>
+<!-- MAIN CONTENT -->
+<div class="main-wrap">
+  <p class="designer-top">DESIGNED BY ABHINEET KUMAR</p>
+  
+  <div class="royal-card">
+    <p class="om">॥ ॐ श्री गणेशाय नमः ॥</p>
+    <h1 class="couple-title"><span>Premjeet</span> & <span>Manwi</span></h1>
+    <p class="couple-subtitle">OUR BEAUTIFUL MOMENT - TOGETHER FOREVER</p>
+    
+    <div class="couple-img-wrapper">
+      <img src="couple.jpg" class="couple-img" alt="Premjeet & Manwi">
+      <div class="img-overlay"></div>
+    </div>
 
-<div class="royal-card">
-<div class="corner tl"></div><div class="corner tr"></div>
-<div class="corner bl"></div><div class="corner br"></div>
-<p style="font-size:12px;letter-spacing:2px;color:#d4af37;font-weight:700">॥ ॐ श्री गणेशाय नमः ॥</p>
-<p style="margin-top:20px;font-style:italic;font-size:20px">With the Blessings of Our Families</p>
-<p style="font-family:'Montserrat';font-size:8.5px;letter-spacing:4px;color:#d4af37;margin-top:6px">TOGETHER WITH THEIR FAMILIES</p>
-<div style="width:110px;height:1px;margin:22px auto;background:linear-gradient(90deg,transparent,#d4af37,transparent)"></div>
-<h1 class="couple-names">PREMJEET<span class="and">&</span>MANWI</h1>
-<div style="width:110px;height:1px;margin:22px auto;background:linear-gradient(90deg,transparent,#d4af37,transparent)"></div>
-<p style="font-style:italic;font-size:18.5px">Joyfully Invite You to Celebrate Their<br>Wedding</p>
-<div style="margin-top:26px;display:inline-block;border:1px solid rgba(212,175,55,.38);border-radius:28px;padding:11px 28px;background:rgba(0,0,0,.4)">
-<p style="letter-spacing:3px;font-size:13.5px;font-weight:700">🌼 10TH DECEMBER 2026 🌼</p>
-</div>
-<p style="margin-top:24px;font-style:italic;font-size:11.5px;opacity:.55;max-width:420px;margin:24px auto 0">"May love, trust, and divine grace guide our steps as we begin our holy union."</p>
-<p style="margin-top:12px;font-size:10px;letter-spacing:4px;color:#d4af37;font-weight:700">❤ SHUBH VIVAH ❤</p>
-</div>
-</div>
+    <div class="date-card">
+      <h3>Thursday, 10th December 2026</h3>
+      <p>✦ SAVE THE DATE - OUR WEDDING DAY ✦</p>
+      <p style="font-size:7px;margin-top:8px;letter-spacing:2px;color:rgba(212,175,55,.5);">ON THIS AUSPICIOUS DAY, TWO HEARTS UNITE</p>
+    </div>
 
-<div style="background:linear-gradient(180deg,#1e0d14,#140a0f,#12060c);padding:84px 14px 72px;text-align:center;border-top:1px solid rgba(212,175,55,.09)">
-<p style="color:#d4af37;font-size:20px">🔱</p>
-<h2 style="font-size:30px;font-weight:700;letter-spacing:2px;color:#f9e29b;margin-top:10px">OUR BEAUTIFUL MOMENT 💛</h2>
-<p style="font-style:italic;font-size:12px;opacity:.55;margin-top:8px">"In your eyes, I found my home. In your heart, I found my forever."</p>
-<div style="width:110px;height:1px;margin:22px auto;background:linear-gradient(90deg,transparent,#d4af37,transparent)"></div>
-<div style="max-width:560px;margin:38px auto 0;position:relative;background:linear-gradient(180deg,#4a1a2e,#2a1020);padding:12px;border:1px solid rgba(212,175,55,.28);border-radius:6px">
-<div class="corner tl"></div><div class="corner tr"></div>
-<div class="corner bl"></div><div class="corner br"></div>
-<div style="height:500px;overflow:hidden;border-radius:3px;position:relative;background:#1a0a0f">
-<img src="couple.jpg" style="width:100%;height:100%;object-fit:cover;object-position:top center">
-<div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(14,6,13,.45),transparent 55%)"></div>
-</div>
-<div style="padding:18px 0 6px;text-align:center">
-<p style="font-size:11px;letter-spacing:4px;font-family:'Montserrat'">PREMJEET ❤ MANWI</p>
-<p style="font-size:9px;font-style:italic;opacity:.48;margin-top:6px">A cherished memory</p>
-</div>
-</div>
-<p style="margin-top:30px;font-family:'Montserrat';font-size:8px;letter-spacing:4px;opacity:.32;color:#d4af37">✦ BLESSED WITH LOVE ✦</p>
-</div>
-<div style="background:radial-gradient(circle at 50% 0%,#1a0a0f,#0e060d);padding:92px 18px 64px;text-align:center">
-<p style="color:#d4af37;font-size:20px">🔱</p>
-<h2 style="font-size:32px;font-weight:700;line-height:1.15;color:#f9e29b">WILL YOU JOIN OUR<br>CELEBRATION?</h2>
-<p style="font-style:italic;font-size:12px;opacity:.58;margin-top:14px">Your presence and blessings will make our special day even more memorable.</p>
+    <div class="venue-section">
+      <p class="venue-title">— VENUE & CELEBRATION —</p>
+      <div class="venue">
+        <p><span class="venue-icon">📍</span> Village - Gopalganj, Bihar, India</p>
+        <p><span class="venue-icon">🕉️</span> With the blessings of elders</p>
+        <p style="margin-top:10px;font-style:italic;color:rgba(245,230,196,.55);">We request the pleasure of your presence<br>on this auspicious occasion of our marriage<br>as we begin our journey together</p>
+      </div>
+    </div>
 
-<div style="margin-top:42px;display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:440px;margin:42px auto 0">
-<div style="background:rgba(255,255,255,.04);border:1px solid rgba(212,175,55,.14);border-radius:12px;padding:18px 12px">
-<p style="color:#d4af37;font-size:9px;letter-spacing:2px;font-family:'Montserrat'">📅 DATE</p>
-<p style="margin-top:8px;font-weight:700;color:#f9e29b;font-size:15px">10th Dec 2026<small style="display:block;font-weight:400;font-size:11px;opacity:.58">Thursday</small></p>
-</div>
-<div style="background:rgba(255,255,255,.04);border:1px solid rgba(212,175,55,.14);border-radius:12px;padding:18px 12px">
-<p style="color:#d4af37;font-size:9px;letter-spacing:2px;font-family:'Montserrat'">⏰ TIME</p>
-<p style="margin-top:8px;font-weight:700;color:#f9e29b;font-size:15px">7:00 PM<small style="display:block;font-weight:400;font-size:11px;opacity:.58">Onwards</small></p>
-</div>
+    <div style="margin-top:24px;padding-top:18px;border-top:1px solid rgba(212,175,55,.1);">
+      <p style="font-family:'Great Vibes';font-size:18px;color:rgba(249,226,155,.7);">Premjeet & Manwi</p>
+      <p style="font-family:'Montserrat';font-size:6px;letter-spacing:3px;color:rgba(212,175,55,.35);margin-top:4px;">TWO SOULS, ONE HEART</p>
+    </div>
+  </div>
+
+  <div style="margin-top:18px;background:linear-gradient(180deg,rgba(74,26,46,.6),rgba(42,14,24,.7));border:1px solid rgba(212,175,55,.15);border-radius:10px;padding:16px;text-align:center;">
+    <p style="font-family:'Montserrat';font-size:8px;letter-spacing:3px;color:rgba(212,175,55,.5);">WITH LOVE & BLESSINGS</p>
+    <p style="font-family:'Montserrat';font-size:10px;color:rgba(245,230,196,.6);margin-top:6px;line-height:1.6;">Your presence will make our special day<br>even more memorable and joyful</p>
+  </div>
+
+  <p class="designer-bottom">DESIGNED WITH ♥ BY ABHINEET KUMAR</p>
+  <p style="text-align:center;font-family:'Montserrat';font-size:6px;letter-spacing:2px;color:rgba(212,175,55,.2);margin-top:6px;">+91 77810 93629 • Gopalganj, Bihar</p>
 </div>
 
-<div style="margin-top:56px;border-top:1px solid rgba(212,175,55,.09);padding-top:26px">
-<p style="font-family:'Montserrat';font-size:8px;letter-spacing:4px;opacity:.28;color:#d4af37">✦ SHUBH VIVAH ✦</p>
-<p style="margin-top:12px;opacity:.95;background:rgba(212,175,55,.12);border:1px solid rgba(212,175,55,.22);display:inline-block;padding:9px 20px;border-radius:22px;font-family:'Montserrat';font-size:8px;letter-spacing:4px;color:#d4af37">✦ CRAFTED BY ABHINEET KUMAR ✦</p>
-</div>
-</div>
-
-<audio id="bgMusic" loop preload="auto" playsinline>
-<source src="song.mp3" type="audio/mpeg">
-</audio>
-<button id="musicBtn" onclick="toggleMusic()" class="music-btn">🔇</button>
-
+<audio id="bgMusic" loop preload="auto"><source src="music.mp3" type="audio/mpeg"></audio>
 <script>
-let weddingDate = new Date("2026-12-10T19:00:00+05:30").getTime();
-function updateTimer(){
-  let now = new Date().getTime();
-  let diff = weddingDate - now;
-  if(diff<0) diff=0;
-  let d = Math.floor(diff/(1e3*60*60*24));
-  let h = Math.floor((diff%(1e3*60*60*24))/(1e3*60*60));
-  let m = Math.floor((diff%(1e3*60*60))/(1e3*60));
-  let s = Math.floor((diff%(1e3*60))/1e3);
-  document.getElementById('timer').innerHTML=`
-  <div class="timer-box"><span class="num">${String(d).padStart(2,'0')}</span><span class="txt">DAYS</span></div>
-  <div class="timer-box"><span class="num">${String(h).padStart(2,'0')}</span><span class="txt">HOURS</span></div>
-  <div class="timer-box"><span class="num">${String(m).padStart(2,'0')}</span><span class="txt">MINS</span></div>
-  <div class="timer-box"><span class="num">${String(s).padStart(2,'0')}</span><span class="txt">SECS</span></div>`;
+// ==================== PASSWORD SYSTEM ====================
+function checkPass(){
+  let entered = document.getElementById('passInput').value.trim();
+  let correctPass = "Prem2026"; // YAHAN APNA PASSWORD BADAL SAKTA HAI
+  // Example: "ManwiKiShaadi" ya "PremManwi2026"
+
+  if(entered === correctPass){
+    let overlay = document.getElementById('passOverlay');
+    overlay.style.transition = 'opacity 0.8s ease';
+    overlay.style.opacity = '0';
+    setTimeout(()=>{ overlay.style.display='none'; },800);
+    // Success vibration on mobile
+    if(navigator.vibrate) navigator.vibrate(100);
+  } else {
+    let err = document.getElementById('passErr');
+    let inp = document.getElementById('passInput');
+    err.style.display='block';
+    inp.value='';
+    inp.style.borderColor='#ff6b9d';
+    inp.style.animation='shake 0.4s ease';
+    setTimeout(()=>{
+      err.style.display='none';
+      inp.style.borderColor='rgba(212,175,55,.38)';
+      inp.style.animation='';
+    },2500);
+    if(navigator.vibrate) navigator.vibrate([100,50,100]);
+  }
 }
+
+// Enter key support
+document.addEventListener('DOMContentLoaded',()=>{
+  let inp = document.getElementById('passInput');
+  if(inp){
+    inp.addEventListener('keypress',(e)=>{
+      if(e.key==='Enter') checkPass();
+    });
+    inp.addEventListener('focus',()=>{
+      inp.placeholder='';
+    });
+    inp.addEventListener('blur',()=>{
+      inp.placeholder='••••••••';
+    });
+  }
+});
+
+// Shake animation
+let styleSheet = document.createElement('style');
+styleSheet.textContent = `@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}`;
+document.head.appendChild(styleSheet);
+
+// ==================== ENVELOPE OPEN + AUTO MUSIC ====================
+function openEnvelope(){
+  // Check if password overlay still visible - block if yes
+  let passOverlay = document.getElementById('passOverlay');
+  if(passOverlay && passOverlay.style.display !== 'none' && passOverlay.style.opacity !== '0'){
+    // Shake envelope to indicate locked
+    let env = document.getElementById('envelope');
+    env.style.animation = 'shake 0.5s ease';
+    setTimeout(()=>{ env.style.animation='envelopeFloat 3s ease-in-out infinite'; },500);
+    return;
+  }
+
+  let envelope = document.getElementById('envelope');
+  let overlay = document.getElementById('envelopeOverlay');
+  
+  envelope.classList.add('open');
+  
+  setTimeout(()=>{
+    overlay.style.opacity='0';
+    overlay.style.visibility='hidden';
+    setTimeout(()=>{
+      overlay.style.display='none';
+      // Auto play music after envelope opens
+      let music = document.getElementById('bgMusic');
+      if(music){
+        music.volume=0.0;
+        music.play().then(()=>{
+          // Fade in music
+          let vol=0;
+          let fade=setInterval(()=>{
+            vol+=0.05;
+            if(vol>=0.65){ vol=0.65; clearInterval(fade); }
+            music.volume=vol;
+          },120);
+        }).catch(()=>{
+          console.log('Music autoplay blocked - user interaction needed');
+        });
+      }
+    },900);
+  },900);
+
+  // Haptic feedback
+  if(navigator.vibrate) navigator.vibrate(80);
+}
+
+// ==================== COUNTDOWN TIMER - THURSDAY - EK LINE ME ====================
+function updateTimer(){
+  // Target date - Thursday 10th Dec 2026
+  let target = new Date("December 10, 2026 10:00:00").getTime();
+  let now = new Date().getTime();
+  let diff = target - now;
+
+  if(diff < 0) diff = 0;
+
+  let days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  let hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  let mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+  let secs = Math.floor((diff % (1000 * 60)) / 1000);
+
+  // Pad with zero
+  let dStr = days < 10 ? '0'+days : days;
+  let hStr = hours < 10 ? '0'+hours : hours;
+  let mStr = mins < 10 ? '0'+mins : mins;
+  let sStr = secs < 10 ? '0'+secs : secs;
+
+  document.getElementById('timer').innerHTML = 
+    `<div class="timer-box"><div class="corner-dot dot-tl"></div><div class="corner-dot dot-tr"></div><div class="corner-dot dot-bl"></div><div class="corner-dot dot-br"></div><span class="num">${dStr}</span><span class="txt">DAYS</span></div>`+
+    `<div class="timer-box"><div class="corner-dot dot-tl"></div><div class="corner-dot dot-tr"></div><div class="corner-dot dot-bl"></div><div class="corner-dot dot-br"></div><span class="num">${hStr}</span><span class="txt">HOURS</span></div>`+
+    `<div class="timer-box"><div class="corner-dot dot-tl"></div><div class="corner-dot dot-tr"></div><div class="corner-dot dot-bl"></div><div class="corner-dot dot-br"></div><span class="num">${mStr}</span><span class="txt">MINS</span></div>`+
+    `<div class="timer-box"><div class="corner-dot dot-tl"></div><div class="corner-dot dot-tr"></div><div class="corner-dot dot-bl"></div><div class="corner-dot dot-br"></div><span class="num">${sStr}</span><span class="txt">SECS</span></div>`;
+}
+
+// Update every second
 setInterval(updateTimer,1000);
 updateTimer();
 
-function openEnvelope(){
-  let o=document.getElementById('envelopeOverlay');
-  let a=document.getElementById('bgMusic');
-  let b=document.getElementById('musicBtn');
-  o.classList.add('opened');
-  a.volume=0.85;a.currentTime=0;a.muted=false;
-  let p=a.play();
-  if(p!==undefined){
-    p.then(()=>{b.innerHTML="🎵"}).catch(()=>{
-      setTimeout(()=>{a.play().then(()=>{b.innerHTML="🎵"})},150);
-    });
-  }
-  setTimeout(()=>{o.style.display='none'},1250);
-}
-function toggleMusic(){
-  let a=document.getElementById('bgMusic');
-  let b=document.getElementById('musicBtn');
-  if(a.paused){a.volume=0.85;a.play().then(()=>{b.innerHTML="🎵"})}
-  else{a.pause();b.innerHTML="🔇"}
-}
-// SOFT PANKHURI ONLY - NO EMOJI
+// ==================== SOFT PANKHURI - PURE PAGE ME GIRNA ====================
 function createSoftPankhuri(){
-  let wrap=document.getElementById('countdownWrap');
+  // Create different types of petals
+  let petalColors = [
+    'radial-gradient(ellipse at 30% 30%,#ffc2d1,#ffb3c6 40%,#ff8fab 100%)',
+    'radial-gradient(ellipse at 30% 30%,#ffafcc,#ffc8dd 40%,#ff8fab 100%)',
+    'radial-gradient(ellipse at 30% 30%,#f8c8dc,#ffb3c6 40%,#fb6f92 100%)'
+  ];
+
   setInterval(()=>{
-    let p=document.createElement('div');
-    p.className='soft-petal';
-    p.style.left=(Math.random()*90+5)+'%';
-    let s=8+Math.random()*10;
-    p.style.width=s+'px';
-    p.style.height=(s*.7)+'px';
-    p.style.animationDuration=(2.5+Math.random()*2.5)+'s';
-    wrap.appendChild(p);
-    setTimeout(()=>{p.remove()},5000);
-  },260);
+    let p = document.createElement('div');
+    p.className = 'soft-petal';
+    
+    // Random position across full page width
+    p.style.left = (Math.random() * 100) + '%';
+    
+    // Random size
+    let size = 6 + Math.random() * 14;
+    p.style.width = size + 'px';
+    p.style.height = (size * 0.75) + 'px';
+    
+    // Random color
+    p.style.background = petalColors[Math.floor(Math.random()*petalColors.length)];
+    
+    // Random duration and delay
+    p.style.animationDuration = (3.5 + Math.random() * 4.5) + 's';
+    p.style.animationDelay = (Math.random() * 0.8) + 's';
+    
+    // Random opacity
+    p.style.opacity = (0.7 + Math.random()*0.3);
+    
+    // Add to body - pure page me giregi
+    document.body.appendChild(p);
+    
+    // Remove after animation completes
+    setTimeout(()=>{ 
+      if(p.parentNode) p.remove();
+    },8500);
+  },160); // Har 160ms me ek nayi pankhuri
 }
-createSoftPankhuri();
+
+// Start pankhuri after small delay
+setTimeout(createSoftPankhuri,800);
+
+// ==================== PREVENT RIGHT CLICK & EXTRA ====================
+document.addEventListener('contextmenu', e => e.preventDefault());
+
+// Add subtle parallax on scroll
+let lastScroll = 0;
+window.addEventListener('scroll', ()=>{
+  let scrolled = window.pageYOffset;
+  let rate = scrolled * -0.3;
+  let countdownSec = document.querySelector('.countdown-section');
+  if(countdownSec && scrolled < 400){
+    countdownSec.style.transform = `translateY(${rate * 0.15}px)`;
+  }
+  lastScroll = scrolled;
+}, {passive:true});
+
+console.log('💌 Premjeet & Manwi Wedding Invitation - Designed by Abhineet Kumar - +91 77810 93629');
+console.log('🔒 Password Protected - Contact +91 77810 93629 for password');
 </script>
 </body>
 </html>
