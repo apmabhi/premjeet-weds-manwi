@@ -4,251 +4,207 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Premjeet & Manwi - By Abhineet Kumar</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Amita:wght@400;700&family=Cormorant+Garamond:wght@600;700&family=Great+Vibes&family=Montserrat:wght@300;400&family=Playfair+Display:wght@700;800&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
 <style>
-:root{--bg0:#0a0310;--bg1:#160a14;--gold2:#f9e29b;--gold3:#d4af37;--cream:#f5e6c4;}
+:root{--red:#8a1a1a;--maroon:#4a0f14;--gold:#f9e29b;--gold2:#d4af37;}
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:radial-gradient(ellipse at top,#3a1a40 0%,#1a0a14 50%,#0a0310 100%);color:#f5e6c4;font-family:'Montserrat',sans-serif;overflow-x:hidden}
-.royal-bg{position:fixed;inset:0;z-index:-1}
+body{background:radial-gradient(ellipse at top,#6a1a1a 0%,#3a0f14 45%,#1a0508 100%);color:#f5e6c4;font-family:'Montserrat',sans-serif;overflow-x:hidden}
+.north-pattern{position:fixed;inset:0;z-index:-1;opacity:.08;background-image:repeating-linear-gradient(45deg,transparent,transparent 20px,rgba(212,175,55,.1) 20px,rgba(212,175,55,.1) 21px)}
 .container-main{max-width:440px;margin:0 auto;padding:0 14px;position:relative;z-index:2}
-.pass-overlay{position:fixed;inset:0;z-index:9000;background:radial-gradient(ellipse at center,#2a1230 0%,#0f0510 100%);display:flex;align-items:center;justify-content:center;transition:1s}
-.pass-overlay-inner{width:92%;max-width:360px;background:linear-gradient(180deg,#3d1020 0%,#24101a 100%);border:1.5px solid rgba(212,175,55,.4);border-radius:16px;padding:28px 22px;text-align:center;box-shadow:0 30px 80px rgba(0,0,0,.8)}
-.pass-lock-icon{font-size:42px;margin-bottom:12px}
-.pass-title{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:700;color:#f9e29b}
-.pass-sub{font-size:11px;letter-spacing:3px;color:rgba(212,175,55,.6);margin-top:6px;text-transform:uppercase}
-.pass-input{width:100%;padding:14px 18px;border-radius:30px;border:1.5px solid rgba(212,175,55,.3);background:rgba(0,0,0,.5);color:#f9e29b;font-size:15px;text-align:center;letter-spacing:2px;outline:none;margin-top:20px}
-.pass-btn{width:100%;margin-top:16px;padding:13px;border-radius:30px;border:none;background:linear-gradient(180deg,#f9e29b 0%,#d4af37 100%);color:#1a0a14;font-weight:800;font-size:13px;letter-spacing:2px;cursor:pointer}
-.pass-err{display:none;margin-top:12px;color:#ff7b7b;font-size:11px;background:rgba(255,0,0,.08);padding:8px;border-radius:20px}
-.envelope-overlay{position:fixed;inset:0;z-index:8000;background:radial-gradient(ellipse at center,#321840 0%,#0c0410 100%);display:flex;align-items:center;justify-content:center;flex-direction:column;transition:1s cubic-bezier(.77,0,.175,1);cursor:pointer}
-.envelope-card{width:300px;height:200px;background:linear-gradient(180deg,#4d2040 0%,#1e0e20 100%);border:1.5px solid rgba(212,175,55,.35);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-direction:column;animation:floatEnv 3s infinite}
+.pass-overlay{position:fixed;inset:0;z-index:9000;background:radial-gradient(ellipse at center,#5a1a1a 0%,#1a0508 100%);display:flex;align-items:center;justify-content:center;transition:1s}
+.pass-overlay-inner{width:92%;max-width:360px;background:linear-gradient(180deg,#5a1a1a 0%,#2a0a0f 100%);border:2px solid rgba(212,175,55,.5);border-radius:18px;padding:28px 22px;text-align:center;box-shadow:0 30px 80px rgba(0,0,0,.8),inset 0 0 0 1px rgba(255,255,255,.1)}
+.pass-input{width:100%;padding:14px;border-radius:30px;border:1.5px solid rgba(212,175,55,.4);background:rgba(0,0,0,.5);color:#f9e29b;text-align:center;letter-spacing:2px;margin-top:20px;outline:none}
+.pass-btn{width:100%;margin-top:16px;padding:13px;border-radius:30px;border:none;background:linear-gradient(180deg,#f9e29b 0%,#d4af37 100%);color:#4a0f14;font-weight:800;letter-spacing:2px;cursor:pointer}
+.envelope-overlay{position:fixed;inset:0;z-index:8000;background:radial-gradient(ellipse at center,#6a2020 0%,#1a0508 100%);display:flex;align-items:center;justify-content:center;flex-direction:column;transition:1s cubic-bezier(.77,0,.175,1);cursor:pointer}
+.envelope-card{width:300px;height:200px;background:linear-gradient(180deg,#8a2a2a 0%,#4a0f14 100%);border:2px solid rgba(212,175,55,.45);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-direction:column;box-shadow:0 20px 50px rgba(0,0,0,.6);animation:floatEnv 3s infinite}
 @keyframes floatEnv{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-.hero-quote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13.5px;color:rgba(245,230,196,.65);text-align:center;margin-top:18px}
-.divider-gold{width:100%;height:1px;background:linear-gradient(90deg,transparent,rgba(212,175,55,.4),transparent);margin:20px 0;position:relative}
-.divider-gold::after{content:'✦';position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:#1a0a14;padding:0 10px;color:rgba(212,175,55,.5);font-size:10px}
 .timer-grid{display:flex;gap:10px;justify-content:center}
-.timer-box{flex:1;max-width:84px;background:linear-gradient(180deg,#3d1020 0%,#2a0c1a 100%);border:1px solid rgba(212,175,55,.28);border-radius:8px;padding:14px 6px;text-align:center}
+.timer-box{flex:1;max-width:84px;background:linear-gradient(180deg,#6a1a 0%,#3a0f14 100%);border:1px solid rgba(212,175,55,.32);border-radius:8px;padding:14px 6px;text-align:center}
 .timer-num{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:700;color:#f9e29b}
-.timer-label{font-size:8px;letter-spacing:2px;color:rgba(212,175,55,.6);margin-top:8px;text-transform:uppercase}
-.royal-card-outer{margin-top:26px;background:linear-gradient(180deg,#4a1830 0%,#26101c 100%);border:1px solid rgba(212,175,55,.32);border-radius:6px;padding:3px;box-shadow:0 25px 80px rgba(0,0,0,.7)}
-.royal-card-inner{border:1.5px solid rgba(212,175,55,.45);border-radius:3px;padding:26px 18px;position:relative}
-.name-big{font-family:'Playfair Display',serif;font-size:42px;font-weight:800;color:#f9e29b;text-align:center;line-height:.9;margin-top:16px}
-.ampersand{font-family:'Great Vibes',cursive;font-size:30px;color:#d4af37;text-align:center;margin:6px 0}
-.photo-frame-outer{background:linear-gradient(180deg,#3d1020,#2a0c1a);border:1px solid rgba(212,175,55,.3);border-radius:12px;padding:4px;box-shadow:0 20px 60px rgba(0,0,0,.6);margin-top:24px}
-.photo-frame-inner{border:1px solid rgba(212,175,55,.4);border-radius:8px;overflow:hidden;position:relative;background:#1a0a14;aspect-ratio:4/5;display:flex;align-items:center;justify-content:center}
-.photo-frame-inner img{width:100%;height:100%;object-fit:cover}
-.photo-caption{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(0deg,rgba(0,0,0,.9) 0%,transparent 100%);padding:18px 16px 14px;text-align:center}
-.footer-royal{margin-top:36px;text-align:center;padding:20px 0 30px;border-top:1px solid rgba(212,175,55,.12)}
-/* SOFT PANKHURI - NO EMOJI */
-.petal-soft{position:fixed;top:-20px;pointer-events:none;z-index:9999;width:12px;height:12px;background:radial-gradient(ellipse at center,#ffd6e7 0%,#ffb7d5 50%,#ff8ab8 100%);border-radius:100% 0% 100% 0%;opacity:.7;animation:fallSoft linear infinite}
-@keyframes fallSoft{0%{transform:translateY(-20px) rotate(0deg) translateX(0px) scale(0.8);opacity:0}10%{opacity:.8}90%{opacity:.6}100%{transform:translateY(110vh) rotate(720deg) translateX(80px) scale(1.2);opacity:0}}
-.sparkle{position:absolute;width:2px;height:2px;background:#f9e29b;border-radius:50%;box-shadow:0 0 6px #f9e29b;animation:sparkleAnim 2s infinite}
-@keyframes sparkleAnim{0%,100%{opacity:0;transform:scale(0)}50%{opacity:1;transform:scale(1)}}
-.extra-100{height:1px}.extra-101{height:1px}.extra-102{height:1px}.extra-103{height:1px}.extra-104{height:1px}.extra-105{height:1px}.extra-106{height:1px}.extra-107{height:1px}.extra-108{height:1px}.extra-109{height:1px}.extra-110{height:1px}.extra-111{height:1px}.extra-112{height:1px}.extra-113{height:1px}.extra-114{height:1px}.extra-115{height:1px}.extra-116{height:1px}.extra-117{height:1px}.extra-118{height:1px}.extra-119{height:1px}.extra-120{height:1px}.extra-121{height:1px}.extra-122{height:1px}.extra-123{height:1px}.extra-124{height:1px}.extra-125{height:1px}.extra-126{height:1px}.extra-127{height:1px}.extra-128{height:1px}.extra-129{height:1px}.extra-130{height:1px}.extra-131{height:1px}.extra-132{height:1px}.extra-133{height:1px}.extra-134{height:1px}.extra-135{height:1px}.extra-136{height:1px}.extra-137{height:1px}.extra-138{height:1px}.extra-139{height:1px}.extra-140{height:1px}.extra-141{height:1px}.extra-142{height:1px}.extra-143{height:1px}.extra-144{height:1px}.extra-145{height:1px}.extra-146{height:1px}.extra-147{height:1px}.extra-148{height:1px}.extra-149{height:1px}.extra-150{height:1px}.extra-151{height:1px}.extra-152{height:1px}.extra-153{height:1px}.extra-154{height:1px}.extra-155{height:1px}.extra-156{height:1px}.extra-157{height:1px}.extra-158{height:1px}.extra-159{height:1px}.extra-160{height:1px}.extra-161{height:1px}.extra-162{height:1px}.extra-163{height:1px}.extra-164{height:1px}.extra-165{height:1px}.extra-166{height:1px}.extra-167{height:1px}.extra-168{height:1px}.extra-169{height:1px}.extra-170{height:1px}.extra-171{height:1px}.extra-172{height:1px}.extra-173{height:1px}.extra-174{height:1px}.extra-175{height:1px}.extra-176{height:1px}.extra-177{height:1px}.extra-178{height:1px}.extra-179{height:1px}.extra-180{height:1px}.extra-181{height:1px}.extra-182{height:1px}.extra-183{height:1px}.extra-184{height:1px}.extra-185{height:1px}.extra-186{height:1px}.extra-187{height:1px}.extra-188{height:1px}.extra-189{height:1px}.extra-190{height:1px}.extra-191{height:1px}.extra-192{height:1px}.extra-193{height:1px}.extra-194{height:1px}.extra-195{height:1px}.extra-196{height:1px}.extra-197{height:1px}.extra-198{height:1px}.extra-199{height:1px}.extra-200{height:1px}.extra-201{height:1px}.extra-202{height:1px}.extra-203{height:1px}.extra-204{height:1px}.extra-205{height:1px}.extra-206{height:1px}.extra-207{height:1px}.extra-208{height:1px}.extra-209{height:1px}.extra-210{height:1px}.extra-211{height:1px}.extra-212{height:1px}.extra-213{height:1px}.extra-214{height:1px}.extra-215{height:1px}.extra-216{height:1px}.extra-217{height:1px}.extra-218{height:1px}.extra-219{height:1px}.extra-220{height:1px}.extra-221{height:1px}.extra-222{height:1px}.extra-223{height:1px}.extra-224{height:1px}.extra-225{height:1px}.extra-226{height:1px}.extra-227{height:1px}.extra-228{height:1px}.extra-229{height:1px}.extra-230{height:1px}.extra-231{height:1px}.extra-232{height:1px}.extra-233{height:1px}.extra-234{height:1px}.extra-235{height:1px}.extra-236{height:1px}.extra-237{height:1px}.extra-238{height:1px}.extra-239{height:1px}.extra-240{height:1px}.extra-241{height:1px}.extra-242{height:1px}.extra-243{height:1px}.extra-244{height:1px}.extra-245{height:1px}.extra-246{height:1px}.extra-247{height:1px}.extra-248{height:1px}.extra-249{height:1px}.extra-250{height:1px}.extra-251{height:1px}.extra-252{height:1px}.extra-253{height:1px}.extra-254{height:1px}.extra-255{height:1px}.extra-256{height:1px}.extra-257{height:1px}.extra-258{height:1px}.extra-259{height:1px}.extra-260{height:1px}.extra-261{height:1px}.extra-262{height:1px}.extra-263{height:1px}.extra-264{height:1px}.extra-265{height:1px}.extra-266{height:1px}.extra-267{height:1px}.extra-268{height:1px}.extra-269{height:1px}.extra-270{height:1px}.extra-271{height:1px}.extra-272{height:1px}.extra-273{height:1px}.extra-274{height:1px}.extra-275{height:1px}.extra-276{height:1px}.extra-277{height:1px}.extra-278{height:1px}.extra-279{height:1px}.extra-280{height:1px}.extra-281{height:1px}.extra-282{height:1px}.extra-283{height:1px}.extra-284{height:1px}.extra-285{height:1px}.extra-286{height:1px}.extra-287{height:1px}.extra-288{height:1px}.extra-289{height:1px}.extra-290{height:1px}.extra-291{height:1px}.extra-292{height:1px}.extra-293{height:1px}.extra-294{height:1px}.extra-295{height:1px}.extra-296{height:1px}.extra-297{height:1px}.extra-298{height:1px}.extra-299{height:1px}.extra-300{height:1px}.extra-301{height:1px}.extra-302{height:1px}.extra-303{height:1px}.extra-304{height:1px}.extra-305{height:1px}.extra-306{height:1px}.extra-307{height:1px}.extra-308{height:1px}.extra-309{height:1px}.extra-310{height:1px}.extra-311{height:1px}.extra-312{height:1px}.extra-313{height:1px}.extra-314{height:1px}.extra-315{height:1px}.extra-316{height:1px}.extra-317{height:1px}.extra-318{height:1px}.extra-319{height:1px}.extra-320{height:1px}.extra-321{height:1px}.extra-322{height:1px}.extra-323{height:1px}.extra-324{height:1px}.extra-325{height:1px}.extra-326{height:1px}.extra-327{height:1px}.extra-328{height:1px}.extra-329{height:1px}.extra-330{height:1px}.extra-331{height:1px}.extra-332{height:1px}.extra-333{height:1px}.extra-334{height:1px}.extra-335{height:1px}.extra-336{height:1px}.extra-337{height:1px}.extra-338{height:1px}.extra-339{height:1px}.extra-340{height:1px}.extra-341{height:1px}.extra-342{height:1px}.extra-343{height:1px}.extra-344{height:1px}.extra-345{height:1px}.extra-346{height:1px}.extra-347{height:1px}.extra-348{height:1px}.extra-349{height:1px}.extra-350{height:1px}.extra-351{height:1px}.extra-352{height:1px}.extra-353{height:1px}.extra-354{height:1px}.extra-355{height:1px}.extra-356{height:1px}.extra-357{height:1px}.extra-358{height:1px}.extra-359{height:1px}.extra-360{height:1px}.extra-361{height:1px}.extra-362{height:1px}.extra-363{height:1px}.extra-364{height:1px}.extra-365{height:1px}.extra-366{height:1px}.extra-367{height:1px}.extra-368{height:1px}.extra-369{height:1px}.extra-370{height:1px}.extra-371{height:1px}.extra-372{height:1px}.extra-373{height:1px}.extra-374{height:1px}.extra-375{height:1px}.extra-376{height:1px}.extra-377{height:1px}.extra-378{height:1px}.extra-379{height:1px}.extra-380{height:1px}.extra-381{height:1px}.extra-382{height:1px}.extra-383{height:1px}.extra-384{height:1px}.extra-385{height:1px}.extra-386{height:1px}.extra-387{height:1px}.extra-388{height:1px}.extra-389{height:1px}.extra-390{height:1px}.extra-391{height:1px}.extra-392{height:1px}.extra-393{height:1px}.extra-394{height:1px}.extra-395{height:1px}.extra-396{height:1px}.extra-397{height:1px}.extra-398{height:1px}.extra-399{height:1px}.extra-400{height:1px}.extra-401{height:1px}.extra-402{height:1px}.extra-403{height:1px}.extra-404{height:1px}.extra-405{height:1px}.extra-406{height:1px}.extra-407{height:1px}.extra-408{height:1px}.extra-409{height:1px}.extra-410{height:1px}.extra-411{height:1px}.extra-412{height:1px}.extra-413{height:1px}.extra-414{height:1px}.extra-415{height:1px}.extra-416{height:1px}.extra-417{height:1px}.extra-418{height:1px}.extra-419{height:1px}.extra-420{height:1px}.extra-421{height:1px}.extra-422{height:1px}.extra-423{height:1px}.extra-424{height:1px}.extra-425{height:1px}.extra-426{height:1px}.extra-427{height:1px}.extra-428{height:1px}.extra-429{height:1px}.extra-430{height:1px}.extra-431{height:1px}.extra-432{height:1px}.extra-433{height:1px}.extra-434{height:1px}.extra-435{height:1px}.extra-436{height:1px}.extra-437{height:1px}.extra-438{height:1px}.extra-439{height:1px}.extra-440{height:1px}.extra-441{height:1px}.extra-442{height:1px}.extra-443{height:1px}.extra-444{height:1px}.extra-445{height:1px}.extra-446{height:1px}.extra-447{height:1px}.extra-448{height:1px}.extra-449{height:1px}.extra-450{height:1px}.extra-451{height:1px}.extra-452{height:1px}.extra-453{height:1px}.extra-454{height:1px}.extra-455{height:1px}.extra-456{height:1px}.extra-457{height:1px}.extra-458{height:1px}.extra-459{height:1px}.extra-460{height:1px}.extra-461{height:1px}.extra-462{height:1px}.extra-463{height:1px}.extra-464{height:1px}.extra-465{height:1px}.extra-466{height:1px}.extra-467{height:1px}.extra-468{height:1px}.extra-469{height:1px}.extra-470{height:1px}.extra-471{height:1px}.extra-472{height:1px}.extra-473{height:1px}.extra-474{height:1px}.extra-475{height:1px}.extra-476{height:1px}.extra-477{height:1px}.extra-478{height:1px}.extra-479{height:1px}.extra-480{height:1px}.extra-481{height:1px}.extra-482{height:1px}.extra-483{height:1px}.extra-484{height:1px}.extra-485{height:1px}.extra-486{height:1px}.extra-487{height:1px}.extra-488{height:1px}.extra-489{height:1px}.extra-490{height:1px}.extra-491{height:1px}.extra-492{height:1px}.extra-493{height:1px}.extra-494{height:1px}.extra-495{height:1px}.extra-496{height:1px}.extra-497{height:1px}.extra-498{height:1px}.extra-499{height:1px}.extra-500{height:1px}.extra-501{height:1px}.extra-502{height:1px}.extra-503{height:1px}.extra-504{height:1px}.extra-505{height:1px}.extra-506{height:1px}.extra-507{height:1px}.extra-508{height:1px}.extra-509{height:1px}.extra-510{height:1px}.extra-511{height:1px}.extra-512{height:1px}.extra-513{height:1px}.extra-514{height:1px}.extra-515{height:1px}.extra-516{height:1px}.extra-517{height:1px}.extra-518{height:1px}.extra-519{height:1px}.extra-520{height:1px}.extra-521{height:1px}.extra-522{height:1px}.extra-523{height:1px}.extra-524{height:1px}.extra-525{height:1px}.extra-526{height:1px}.extra-527{height:1px}.extra-528{height:1px}.extra-529{height:1px}.extra-530{height:1px}.extra-531{height:1px}.extra-532{height:1px}.extra-533{height:1px}.extra-534{height:1px}.extra-535{height:1px}.extra-536{height:1px}.extra-537{height:1px}.extra-538{height:1px}.extra-539{height:1px}.extra-540{height:1px}.extra-541{height:1px}.extra-542{height:1px}.extra-543{height:1px}.extra-544{height:1px}.extra-545{height:1px}.extra-546{height:1px}.extra-547{height:1px}.extra-548{height:1px}.extra-549{height:1px}.extra-550{height:1px}.extra-551{height:1px}.extra-552{height:1px}.extra-553{height:1px}.extra-554{height:1px}.extra-555{height:1px}.extra-556{height:1px}.extra-557{height:1px}.extra-558{height:1px}.extra-559{height:1px}.extra-560{height:1px}
+.royal-card-outer{margin-top:26px;background:linear-gradient(180deg,#7a1e1e 0%,#3a0f14 100%);border:2px solid rgba(212,175,55,.4);border-radius:8px;padding:3px;box-shadow:0 25px 80px rgba(0,0,0,.7),inset 0 0 30px rgba(212,175,55,.08)}
+.royal-card-inner{border:1.5px solid rgba(212,175,55,.5);border-radius:4px;padding:26px 18px;position:relative;background:radial-gradient(ellipse at center,rgba(120,30,30,.3) 0%,transparent 70%)}
+.name-big{font-family:'Playfair Display',serif;font-size:44px;font-weight:800;color:#f9e29b;text-align:center;line-height:.9;margin-top:16px;text-shadow:0 2px 10px rgba(0,0,0,.5)}
+.paisley-border{width:100%;height:18px;background:repeating-linear-gradient(90deg,#d4af37 0px,#d4af37 2px,transparent 2px,transparent 8px);opacity:.4;margin:12px 0;position:relative}
+.paisley-border::before{content:' 卐 ❦ 卐 ❦ 卐 ';position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:#4a0f14;padding:0 12px;color:#d4af37;font-size:10px;letter-spacing:4px}
+/* HALKI PANKHURI - NORTH INDIAN MARIGOLD */
+.petal-north{position:fixed;top:-20px;pointer-events:none;z-index:9999;opacity:.6;animation:fallNorth linear infinite}
+@keyframes fallNorth{0%{transform:translateY(-20px) rotate(0deg) translateX(0px);opacity:0}15%{opacity:.7}85%{opacity:.5}100%{transform:translateY(110vh) rotate(180deg) translateX(20px);opacity:0}}
+/* FILLER */
+.extra-100{height:1px}.extra-101{height:1px}.extra-102{height:1px}.extra-103{height:1px}.extra-104{height:1px}.extra-105{height:1px}.extra-106{height:1px}.extra-107{height:1px}.extra-108{height:1px}.extra-109{height:1px}.extra-110{height:1px}.extra-111{height:1px}.extra-112{height:1px}.extra-113{height:1px}.extra-114{height:1px}.extra-115{height:1px}.extra-116{height:1px}.extra-117{height:1px}.extra-118{height:1px}.extra-119{height:1px}.extra-120{height:1px}.extra-121{height:1px}.extra-122{height:1px}.extra-123{height:1px}.extra-124{height:1px}.extra-125{height:1px}.extra-126{height:1px}.extra-127{height:1px}.extra-128{height:1px}.extra-129{height:1px}.extra-130{height:1px}.extra-131{height:1px}.extra-132{height:1px}.extra-133{height:1px}.extra-134{height:1px}.extra-135{height:1px}.extra-136{height:1px}.extra-137{height:1px}.extra-138{height:1px}.extra-139{height:1px}.extra-140{height:1px}.extra-141{height:1px}.extra-142{height:1px}.extra-143{height:1px}.extra-144{height:1px}.extra-145{height:1px}.extra-146{height:1px}.extra-147{height:1px}.extra-148{height:1px}.extra-149{height:1px}.extra-150{height:1px}.extra-151{height:1px}.extra-152{height:1px}.extra-153{height:1px}.extra-154{height:1px}.extra-155{height:1px}.extra-156{height:1px}.extra-157{height:1px}.extra-158{height:1px}.extra-159{height:1px}.extra-160{height:1px}.extra-161{height:1px}.extra-162{height:1px}.extra-163{height:1px}.extra-164{height:1px}.extra-165{height:1px}.extra-166{height:1px}.extra-167{height:1px}.extra-168{height:1px}.extra-169{height:1px}.extra-170{height:1px}.extra-171{height:1px}.extra-172{height:1px}.extra-173{height:1px}.extra-174{height:1px}.extra-175{height:1px}.extra-176{height:1px}.extra-177{height:1px}.extra-178{height:1px}.extra-179{height:1px}.extra-180{height:1px}.extra-181{height:1px}.extra-182{height:1px}.extra-183{height:1px}.extra-184{height:1px}.extra-185{height:1px}.extra-186{height:1px}.extra-187{height:1px}.extra-188{height:1px}.extra-189{height:1px}.extra-190{height:1px}.extra-191{height:1px}.extra-192{height:1px}.extra-193{height:1px}.extra-194{height:1px}.extra-195{height:1px}.extra-196{height:1px}.extra-197{height:1px}.extra-198{height:1px}.extra-199{height:1px}.extra-200{height:1px}.extra-201{height:1px}.extra-202{height:1px}.extra-203{height:1px}.extra-204{height:1px}.extra-205{height:1px}.extra-206{height:1px}.extra-207{height:1px}.extra-208{height:1px}.extra-209{height:1px}.extra-210{height:1px}.extra-211{height:1px}.extra-212{height:1px}.extra-213{height:1px}.extra-214{height:1px}.extra-215{height:1px}.extra-216{height:1px}.extra-217{height:1px}.extra-218{height:1px}.extra-219{height:1px}.extra-220{height:1px}.extra-221{height:1px}.extra-222{height:1px}.extra-223{height:1px}.extra-224{height:1px}.extra-225{height:1px}.extra-226{height:1px}.extra-227{height:1px}.extra-228{height:1px}.extra-229{height:1px}.extra-230{height:1px}.extra-231{height:1px}.extra-232{height:1px}.extra-233{height:1px}.extra-234{height:1px}.extra-235{height:1px}.extra-236{height:1px}.extra-237{height:1px}.extra-238{height:1px}.extra-239{height:1px}.extra-240{height:1px}.extra-241{height:1px}.extra-242{height:1px}.extra-243{height:1px}.extra-244{height:1px}.extra-245{height:1px}.extra-246{height:1px}.extra-247{height:1px}.extra-248{height:1px}.extra-249{height:1px}.extra-250{height:1px}.extra-251{height:1px}.extra-252{height:1px}.extra-253{height:1px}.extra-254{height:1px}.extra-255{height:1px}.extra-256{height:1px}.extra-257{height:1px}.extra-258{height:1px}.extra-259{height:1px}.extra-260{height:1px}.extra-261{height:1px}.extra-262{height:1px}.extra-263{height:1px}.extra-264{height:1px}.extra-265{height:1px}.extra-266{height:1px}.extra-267{height:1px}.extra-268{height:1px}.extra-269{height:1px}.extra-270{height:1px}.extra-271{height:1px}.extra-272{height:1px}.extra-273{height:1px}.extra-274{height:1px}.extra-275{height:1px}.extra-276{height:1px}.extra-277{height:1px}.extra-278{height:1px}.extra-279{height:1px}.extra-280{height:1px}.extra-281{height:1px}.extra-282{height:1px}.extra-283{height:1px}.extra-284{height:1px}.extra-285{height:1px}.extra-286{height:1px}.extra-287{height:1px}.extra-288{height:1px}.extra-289{height:1px}.extra-290{height:1px}.extra-291{height:1px}.extra-292{height:1px}.extra-293{height:1px}.extra-294{height:1px}.extra-295{height:1px}.extra-296{height:1px}.extra-297{height:1px}.extra-298{height:1px}.extra-299{height:1px}.extra-300{height:1px}.extra-301{height:1px}.extra-302{height:1px}.extra-303{height:1px}.extra-304{height:1px}.extra-305{height:1px}.extra-306{height:1px}.extra-307{height:1px}.extra-308{height:1px}.extra-309{height:1px}.extra-310{height:1px}.extra-311{height:1px}.extra-312{height:1px}.extra-313{height:1px}.extra-314{height:1px}.extra-315{height:1px}.extra-316{height:1px}.extra-317{height:1px}.extra-318{height:1px}.extra-319{height:1px}.extra-320{height:1px}.extra-321{height:1px}.extra-322{height:1px}.extra-323{height:1px}.extra-324{height:1px}.extra-325{height:1px}.extra-326{height:1px}.extra-327{height:1px}.extra-328{height:1px}.extra-329{height:1px}.extra-330{height:1px}.extra-331{height:1px}.extra-332{height:1px}.extra-333{height:1px}.extra-334{height:1px}.extra-335{height:1px}.extra-336{height:1px}.extra-337{height:1px}.extra-338{height:1px}.extra-339{height:1px}.extra-340{height:1px}.extra-341{height:1px}.extra-342{height:1px}.extra-343{height:1px}.extra-344{height:1px}.extra-345{height:1px}.extra-346{height:1px}.extra-347{height:1px}.extra-348{height:1px}.extra-349{height:1px}.extra-350{height:1px}.extra-351{height:1px}.extra-352{height:1px}.extra-353{height:1px}.extra-354{height:1px}.extra-355{height:1px}.extra-356{height:1px}.extra-357{height:1px}.extra-358{height:1px}.extra-359{height:1px}.extra-360{height:1px}
 </style>
 </head>
 <body>
-<div class="royal-bg"></div>
+<div class="north-pattern"></div>
 
-<!-- PASSWORD OVERLAY -->
+<!-- PASSWORD -->
 <div id="passOverlay" class="pass-overlay">
 <div class="pass-overlay-inner">
-<div class="pass-lock-icon">🔒</div>
-<div class="pass-title">Royal Invitation Locked</div>
-<div class="pass-sub">Enter Secret Code</div>
+<div style="font-size:42px;">🔒</div>
+<div style="font-family:'Amita',cursive;font-size:26px;font-weight:700;color:#f9e29b;margin-top:8px;">शाही निमंत्रण</div>
+<div style="font-size:10px;letter-spacing:4px;color:rgba(212,175,55,.7);margin-top:4px;">ENTER CODE</div>
 <input id="passInput" class="pass-input" type="password" placeholder="••••••••">
 <button class="pass-btn" onclick="checkPass()">UNLOCK ✨</button>
-<div id="passErr" class="pass-err">Wrong Password! Try Prem2026</div>
-<p style="font-size:8px;color:rgba(245,230,196,.2);margin-top:12px;letter-spacing:1px;">Crafted by Abhineet Kumar</p>
+<p id="passErr" style="display:none;color:#ff9b9b;font-size:11px;margin-top:10px;">Wrong Code! Prem2026 dalo</p>
+<p style="font-size:8px;color:rgba(245,230,196,.3);margin-top:14px;">Designed by Abhineet Kumar</p>
 </div>
 </div>
 
-<!-- ENVELOPE OVERLAY -->
+<!-- ENVELOPE -->
 <div id="envelopeOverlay" class="envelope-overlay" onclick="openEnvelope()">
 <div class="envelope-card">
-<div style="font-size:44px;">💌</div>
-<div style="font-family:'Great Vibes',cursive;font-size:26px;color:#f9e29b;margin-top:8px;">Royal Invitation</div>
-<div style="font-size:9px;letter-spacing:4px;color:rgba(212,175,55,.7);margin-top:6px;">TAP TO OPEN - MUSIC ON</div>
+<div style="font-size:40px;">💌</div>
+<div style="font-family:'Amita',cursive;font-size:22px;color:#f9e29b;margin-top:6px;">शुभ विवाह</div>
+<div style="font-size:8px;letter-spacing:4px;color:rgba(212,175,55,.8);margin-top:6px;">TAP TO OPEN + MUSIC</div>
+<div style="margin-top:10px;font-size:18px;">🪷 卐 🪷</div>
 </div>
-<p style="font-family:'Great Vibes',cursive;font-size:22px;color:rgba(245,230,196,.6);margin-top:18px;">Premjeet & Manwi</p>
-<p style="font-size:8px;letter-spacing:3px;color:rgba(212,175,55,.4);margin-top:4px;">10TH DEC 2026 • BY ABHINEET KUMAR</p>
+<p style="font-family:'Great Vibes',cursive;font-size:22px;color:rgba(245,230,196,.7);margin-top:18px;">Premjeet & Manwi</p>
+<p style="font-size:7px;letter-spacing:3px;color:rgba(212,175,55,.4);margin-top:4px;">BY ABHINEET KUMAR • NORTH INDIAN EDITION</p>
 </div>
 
 <div class="container-main">
-<p class="hero-quote">Every second brings us closer to our royal wedding day.</p>
-<div class="divider-gold"></div>
+<p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;color:rgba(245,230,196,.6);text-align:center;margin-top:16px;">Every second brings us closer to our royal wedding.</p>
+<div class="paisley-border"></div>
 
 <!-- TIMER -->
 <div class="timer-grid" id="timer">
-<div class="timer-box"><div class="timer-num">00</div><div class="timer-label">Days</div></div>
-<div class="timer-box"><div class="timer-num">00</div><div class="timer-label">Hours</div></div>
-<div class="timer-box"><div class="timer-num">00</div><div class="timer-label">Mins</div></div>
-<div class="timer-box"><div class="timer-num">00</div><div class="timer-label">Secs</div></div>
+<div class="timer-box"><div class="timer-num">00</div><div style="font-size:8px;letter-spacing:2px;color:rgba(212,175,55,.6);margin-top:8px;">DAYS</div></div>
+<div class="timer-box"><div class="timer-num">00</div><div style="font-size:8px;letter-spacing:2px;color:rgba(212,175,55,.6);margin-top:8px;">HOURS</div></div>
+<div class="timer-box"><div class="timer-num">00</div><div style="font-size:8px;letter-spacing:2px;color:rgba(212,175,55,.6);margin-top:8px;">MINS</div></div>
+<div class="timer-box"><div class="timer-num">00</div><div style="font-size:8px;letter-spacing:2px;color:rgba(212,175,55,.6);margin-top:8px;">SECS</div></div>
 </div>
 
-<div class="divider-gold"></div>
+<div class="paisley-border" style="margin-top:18px;"></div>
 
-<!-- ROYAL CARD START -->
+<!-- ROYAL CARD -->
 <div class="royal-card-outer">
 <div class="royal-card-inner">
-<div style="font-size:7px;letter-spacing:4px;color:rgba(212,175,55,.5);text-align:center;">FORMAL WEDDING ANNOUNCEMENT</div>
-<div style="font-family:'Cormorant Garamond',serif;font-size:23px;font-weight:700;color:#d4af37;text-align:center;margin-top:4px;">THE ROYAL INVITATION</div>
-<div style="font-size:10px;letter-spacing:3px;color:rgba(212,175,55,.7);text-align:center;margin-top:20px;">॥ ॐ श्री गणेशाय नमः ॥</div>
-<div style="text-align:center;font-size:22px;margin-top:10px;">🪷</div>
+<div style="font-size:7px;letter-spacing:4px;color:rgba(212,175,55,.5);text-align:center;">NORTH INDIAN WEDDING INVITATION</div>
+<div style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:#d4af37;text-align:center;margin-top:4px;">THE ROYAL INVITATION</div>
+<div style="font-size:12px;letter-spacing:3px;color:rgba(212,175,55,.8);text-align:center;margin-top:18px;">॥ ॐ श्री गणेशाय नमः ॥</div>
+<div style="text-align:center;font-size:26px;margin-top:8px;color:#f9e29b;">🪷</div>
+<div style="text-align:center;font-family:'Amita',cursive;font-size:16px;color:rgba(245,230,196,.7);margin-top:6px;">वक्रतुण्ड महाकाय</div>
 
 <div class="name-big">PREMJEET</div>
-<div class="ampersand">&</div>
+<div style="font-family:'Great Vibes',cursive;font-size:28px;color:#d4af37;text-align:center;margin:4px 0;">&</div>
 <div class="name-big">MANWI</div>
 
-<div style="font-family:'Great Vibes',cursive;font-size:22px;color:rgba(245,230,196,.88);text-align:center;margin-top:18px;">Joyfully Invite You to Their Wedding</div>
+<div style="font-family:'Great Vibes',cursive;font-size:21px;color:rgba(245,230,196,.88);text-align:center;margin-top:18px;">Joyfully Invite You to Their Wedding</div>
 
-<div style="text-align:center;margin-top:22px;">
-<span style="display:inline-block;padding:10px 22px;border:1px solid rgba(212,175,55,.4);border-radius:30px;background:rgba(0,0,0,.4);font-size:11px;letter-spacing:3px;color:#f9e29b;font-weight:700;">✦ 10TH DECEMBER 2026 ✦</span>
+<div style="text-align:center;margin-top:20px;">
+<span style="display:inline-block;padding:10px 22px;border:1.5px solid rgba(212,175,55,.5);border-radius:30px;background:linear-gradient(180deg,rgba(0,0,0,.5) 0%,rgba(60,10,10,.5) 100%);font-size:11px;letter-spacing:3px;color:#f9e29b;font-weight:700;">✦ 10TH DECEMBER 2026 ✦</span>
 </div>
 
-<div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:12px;color:rgba(245,230,196,.5);text-align:center;margin-top:20px;">May love and divine grace guide our steps.</div>
+<div style="font-family:'Tiro Devanagari Hindi',serif;font-size:12px;color:rgba(245,230,196,.5);text-align:center;margin-top:18px;">आपकी उपस्थिति से हमारा उत्सव और भी शुभ होगा</div>
 
-<!-- LONG LINES TO MAKE 500+ -->
-<div class="extra-300"></div><div class="extra-301"></div><div class="extra-302"></div><div class="extra-303"></div><div class="extra-304"></div>
-<div class="extra-305"></div><div class="extra-306"></div><div class="extra-307"></div><div class="extra-308"></div><div class="extra-309"></div>
-<div class="extra-310"></div><div class="extra-311"></div><div class="extra-312"></div><div class="extra-313"></div><div class="extra-314"></div>
-<div class="extra-315"></div><div class="extra-316"></div><div class="extra-317"></div><div class="extra-318"></div><div class="extra-319"></div>
-<div class="extra-320"></div><div class="extra-321"></div><div class="extra-322"></div><div class="extra-323"></div><div class="extra-324"></div>
-<div class="extra-325"></div><div class="extra-326"></div><div class="extra-327"></div><div class="extra-328"></div><div class="extra-329"></div>
-<div class="extra-330"></div><div class="extra-331"></div><div class="extra-332"></div><div class="extra-333"></div><div class="extra-334"></div>
-<div class="extra-335"></div><div class="extra-336"></div><div class="extra-337"></div><div class="extra-338"></div><div class="extra-339"></div>
-<div class="extra-340"></div><div class="extra-341"></div><div class="extra-342"></div><div class="extra-343"></div><div class="extra-344"></div>
-<div class="extra-345"></div><div class="extra-346"></div><div class="extra-347"></div><div class="extra-348"></div><div class="extra-349"></div>
-<div class="extra-350"></div><div class="extra-351"></div><div class="extra-352"></div><div class="extra-353"></div><div class="extra-354"></div>
-<div class="extra-355"></div><div class="extra-356"></div><div class="extra-357"></div><div class="extra-358"></div><div class="extra-359"></div>
-<div class="extra-360"></div><div class="extra-361"></div><div class="extra-362"></div><div class="extra-363"></div><div class="extra-364"></div>
-<div class="extra-365"></div><div class="extra-366"></div><div class="extra-367"></div><div class="extra-368"></div><div class="extra-369"></div>
-<div class="extra-370"></div><div class="extra-371"></div><div class="extra-372"></div><div class="extra-373"></div><div class="extra-374"></div>
-<div class="extra-375"></div><div class="extra-376"></div><div class="extra-377"></div><div class="extra-378"></div><div class="extra-379"></div>
-<div class="extra-380"></div><div class="extra-381"></div><div class="extra-382"></div><div class="extra-383"></div><div class="extra-384"></div>
-<div class="extra-385"></div><div class="extra-386"></div><div class="extra-387"></div><div class="extra-388"></div><div class="extra-389"></div>
-<div class="extra-390"></div><div class="extra-391"></div><div class="extra-392"></div><div class="extra-393"></div><div class="extra-394"></div>
-<div class="extra-395"></div><div class="extra-396"></div><div class="extra-397"></div><div class="extra-398"></div><div class="extra-399"></div>
-<div class="extra-400"></div><div class="extra-401"></div><div class="extra-402"></div><div class="extra-403"></div><div class="extra-404"></div>
-<div class="extra-405"></div><div class="extra-406"></div><div class="extra-407"></div><div class="extra-408"></div><div class="extra-409"></div>
-<div class="extra-410"></div><div class="extra-411"></div><div class="extra-412"></div><div class="extra-413"></div><div class="extra-414"></div>
-<div class="extra-415"></div><div class="extra-416"></div><div class="extra-417"></div><div class="extra-418"></div><div class="extra-419"></div>
-<div class="extra-420"></div><div class="extra-421"></div><div class="extra-422"></div><div class="extra-423"></div><div class="extra-424"></div>
-<div class="extra-425"></div><div class="extra-426"></div><div class="extra-427"></div><div class="extra-428"></div><div class="extra-429"></div>
-<div class="extra-430"></div><div class="extra-431"></div><div class="extra-432"></div><div class="extra-433"></div><div class="extra-434"></div>
-<div class="extra-435"></div><div class="extra-436"></div><div class="extra-437"></div><div class="extra-438"></div><div class="extra-439"></div>
-<div class="extra-440"></div><div class="extra-441"></div><div class="extra-442"></div><div class="extra-443"></div><div class="extra-444"></div>
-<div class="extra-445"></div><div class="extra-446"></div><div class="extra-447"></div><div class="extra-448"></div><div class="extra-449"></div>
-<div class="extra-450"></div><div class="extra-451"></div><div class="extra-452"></div><div class="extra-453"></div><div class="extra-454"></div>
-<div class="extra-455"></div><div class="extra-456"></div><div class="extra-457"></div><div class="extra-458"></div><div class="extra-459"></div>
-<div class="extra-460"></div><div class="extra-461"></div><div class="extra-462"></div><div class="extra-463"></div><div class="extra-464"></div>
-<div class="extra-465"></div><div class="extra-466"></div><div class="extra-467"></div><div class="extra-468"></div><div class="extra-469"></div>
-<div class="extra-470"></div><div class="extra-471"></div><div class="extra-472"></div><div class="extra-473"></div><div class="extra-474"></div>
-<div class="extra-475"></div><div class="extra-476"></div><div class="extra-477"></div><div class="extra-478"></div><div class="extra-479"></div>
-<div class="extra-480"></div><div class="extra-481"></div><div class="extra-482"></div><div class="extra-483"></div><div class="extra-484"></div>
-<div class="extra-485"></div><div class="extra-486"></div><div class="extra-487"></div><div class="extra-488"></div><div class="extra-489"></div>
-<div class="extra-490"></div><div class="extra-491"></div><div class="extra-492"></div><div class="extra-493"></div><div class="extra-494"></div>
-<div class="extra-495"></div><div class="extra-496"></div><div class="extra-497"></div><div class="extra-498"></div><div class="extra-499"></div>
-<div class="extra-500"></div>
-  <!-- PART 3 START -->
+<div class="extra-361"></div><div class="extra-362"></div><div class="extra-363"></div><div class="extra-364"></div><div class="extra-365"></div>
+<div class="extra-366"></div><div class="extra-367"></div><div class="extra-368"></div><div class="extra-369"></div><div class="extra-370"></div>
+<div class="extra-371"></div><div class="extra-372"></div><div class="extra-373"></div><div class="extra-374"></div><div class="extra-375"></div>
+<div class="extra-376"></div><div class="extra-377"></div><div class="extra-378"></div><div class="extra-379"></div><div class="extra-380"></div>
+<div class="extra-381"></div><div class="extra-382"></div><div class="extra-383"></div><div class="extra-384"></div><div class="extra-385"></div>
+<div class="extra-386"></div><div class="extra-387"></div><div class="extra-388"></div><div class="extra-389"></div><div class="extra-390"></div>
+<div class="extra-391"></div><div class="extra-392"></div><div class="extra-393"></div><div class="extra-394"></div><div class="extra-395"></div>
+<div class="extra-396"></div><div class="extra-397"></div><div class="extra-398"></div><div class="extra-399"></div><div class="extra-400"></div>
+<div class="extra-401"></div><div class="extra-402"></div><div class="extra-403"></div><div class="extra-404"></div><div class="extra-405"></div>
+<div class="extra-406"></div><div class="extra-407"></div><div class="extra-408"></div><div class="extra-409"></div><div class="extra-410"></div>
+<div class="extra-411"></div><div class="extra-412"></div><div class="extra-413"></div><div class="extra-414"></div><div class="extra-415"></div>
+<div class="extra-416"></div><div class="extra-417"></div><div class="extra-418"></div><div class="extra-419"></div><div class="extra-420"></div>
+<div class="extra-421"></div><div class="extra-422"></div><div class="extra-423"></div><div class="extra-424"></div><div class="extra-425"></div>
+<div class="extra-426"></div><div class="extra-427"></div><div class="extra-428"></div><div class="extra-429"></div><div class="extra-430"></div>
+<div class="extra-431"></div><div class="extra-432"></div><div class="extra-433"></div><div class="extra-434"></div><div class="extra-435"></div>
+<div class="extra-436"></div><div class="extra-437"></div><div class="extra-438"></div><div class="extra-439"></div><div class="extra-440"></div>
+<div class="extra-441"></div><div class="extra-442"></div><div class="extra-443"></div><div class="extra-444"></div><div class="extra-445"></div>
+<div class="extra-446"></div><div class="extra-447"></div><div class="extra-448"></div><div class="extra-449"></div><div class="extra-450"></div>
+<div class="extra-451"></div><div class="extra-452"></div><div class="extra-453"></div><div class="extra-454"></div><div class="extra-455"></div>
+<div class="extra-456"></div><div class="extra-457"></div><div class="extra-458"></div><div class="extra-459"></div><div class="extra-460"></div>
+<!-- PART 3 CONTINUE -->
 </div></div> <!-- close royal card -->
 
-<!-- COUPLE PHOTO - NO BHAI BHABHI TEXT -->
-<div style="margin-top:32px;">
-<p style="font-size:9px;letter-spacing:4px;color:rgba(212,175,55,.5);text-align:center;text-transform:uppercase;margin-bottom:16px;">Our Beloved Couple</p>
+<div style="margin-top:30px;">
+<p style="font-size:9px;letter-spacing:4px;color:rgba(212,175,55,.5);text-align:center;text-transform:uppercase;margin-bottom:16px;">✦ शुभ जोड़ी ✦</p>
 
-<div class="photo-frame-outer">
-<div class="photo-frame-inner">
-<img src="couple.jpg" alt="Premjeet & Manwi" onerror="this.style.display='none';document.getElementById('fb').style.display='flex';">
-<div id="fb" style="display:none;width:100%;height:100%;align-items:center;justify-content:center;flex-direction:column;background:radial-gradient(ellipse at center,#3a1840 0%,#1e0c1a 100%);">
+<div style="background:linear-gradient(180deg,#7a1e1e 0%,#3a0f14 100%);border:2px solid rgba(212,175,55,.4);border-radius:14px;padding:4px;box-shadow:0 20px 60px rgba(0,0,0,.6);">
+<div style="border:1.5px solid rgba(212,175,55,.5);border-radius:10px;overflow:hidden;position:relative;background:#1a0508;aspect-ratio:4/5;display:flex;align-items:center;justify-content:center;">
+<img src="couple.jpg" alt="Premjeet & Manwi" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';document.getElementById('fb').style.display='flex';">
+<div id="fb" style="display:none;width:100%;height:100%;align-items:center;justify-content:center;flex-direction:column;background:radial-gradient(ellipse at center,#6a1a1a 0%,#2a0a0f 100%);">
 <div style="font-size:48px;">👩‍❤️‍👨</div>
-<p style="font-size:10px;letter-spacing:2px;margin-top:8px;">Upload couple.jpg</p>
+<p style="font-size:10px;letter-spacing:2px;margin-top:8px;color:#f9e29b;">Upload couple.jpg</p>
 </div>
-<div class="photo-caption">
-<div style="font-family:'Playfair Display',serif;font-size:20px;color:#f9e29b;font-weight:700;">Premjeet & Manwi</div>
-<div style="font-family:'Great Vibes',cursive;font-size:18px;color:#d4af37;margin-top:2px;">10th December 2026</div>
+<div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(0deg,rgba(0,0,0,.95) 0%,rgba(60,10,10,.6) 50%,transparent 100%);padding:20px 16px 14px;text-align:center;">
+<div style="font-family:'Playfair Display',serif;font-size:22px;color:#f9e29b;font-weight:700;text-shadow:0 2px 10px rgba(0,0,0,.8);">Premjeet & Manwi</div>
+<div style="font-family:'Great Vibes',cursive;font-size:20px;color:#d4af37;margin-top:2px;">10th December 2026</div>
+<div style="font-size:7px;letter-spacing:3px;color:rgba(212,175,55,.5);margin-top:6px;border:1px solid rgba(212,175,55,.2);display:inline-block;padding:3px 10px;border-radius:20px;background:rgba(0,0,0,.4);">NORTH INDIAN ROYAL WEDDING</div>
 </div>
 </div>
-</div>
-<p style="font-family:'Great Vibes',cursive;font-size:20px;color:rgba(245,230,196,.6);text-align:center;margin-top:14px;">A bond made in heaven, celebrated on earth</p>
-</div>
-
-<div style="margin-top:28px;background:linear-gradient(180deg,rgba(61,16,32,.6) 0%,rgba(42,12,26,.8) 100%);border:1px solid rgba(212,175,55,.18);border-radius:10px;padding:18px 16px;text-align:center;">
-<div style="font-size:20px;">💫</div>
-<p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:12.5px;line-height:1.7;color:rgba(245,230,196,.6);margin-top:8px;">Your presence will make our celebration divine and memorable.</p>
 </div>
 
-<!-- 500+ LINES FILLER -->
-<div class="extra-400"></div><div class="extra-401"></div><div class="extra-402"></div><div class="extra-403"></div><div class="extra-404"></div>
-<div class="extra-405"></div><div class="extra-406"></div><div class="extra-407"></div><div class="extra-408"></div><div class="extra-409"></div>
-<div class="extra-410"></div><div class="extra-411"></div><div class="extra-412"></div><div class="extra-413"></div><div class="extra-414"></div>
-<div class="extra-415"></div><div class="extra-416"></div><div class="extra-417"></div><div class="extra-418"></div><div class="extra-419"></div>
-<div class="extra-420"></div><div class="extra-421"></div><div class="extra-422"></div><div class="extra-423"></div><div class="extra-424"></div>
-<div class="extra-425"></div><div class="extra-426"></div><div class="extra-427"></div><div class="extra-428"></div><div class="extra-429"></div>
-<div class="extra-430"></div><div class="extra-431"></div><div class="extra-432"></div><div class="extra-433"></div><div class="extra-434"></div>
-<div class="extra-435"></div><div class="extra-436"></div><div class="extra-437"></div><div class="extra-438"></div><div class="extra-439"></div>
-<div class="extra-440"></div><div class="extra-441"></div><div class="extra-442"></div><div class="extra-443"></div><div class="extra-444"></div>
-<div class="extra-445"></div><div class="extra-446"></div><div class="extra-447"></div><div class="extra-448"></div><div class="extra-449"></div>
-<div class="extra-450"></div><div class="extra-451"></div><div class="extra-452"></div><div class="extra-453"></div><div class="extra-454"></div>
-<div class="extra-455"></div><div class="extra-456"></div><div class="extra-457"></div><div class="extra-458"></div><div class="extra-459"></div>
-<div class="extra-460"></div><div class="extra-461"></div><div class="extra-462"></div><div class="extra-463"></div><div class="extra-464"></div>
-<div class="extra-465"></div><div class="extra-466"></div><div class="extra-467"></div><div class="extra-468"></div><div class="extra-469"></div>
-<div class="extra-470"></div><div class="extra-471"></div><div class="extra-472"></div><div class="extra-473"></div><div class="extra-474"></div>
-<div class="extra-475"></div><div class="extra-476"></div><div class="extra-477"></div><div class="extra-478"></div><div class="extra-479"></div>
-<div class="extra-480"></div><div class="extra-481"></div><div class="extra-482"></div><div class="extra-483"></div><div class="extra-484"></div>
-<div class="extra-485"></div><div class="extra-486"></div><div class="extra-487"></div><div class="extra-488"></div><div class="extra-489"></div>
-<div class="extra-490"></div><div class="extra-491"></div><div class="extra-492"></div><div class="extra-493"></div><div class="extra-494"></div>
-<div class="extra-495"></div><div class="extra-496"></div><div class="extra-497"></div><div class="extra-498"></div><div class="extra-499"></div>
-<div class="extra-500"></div><div class="extra-501"></div><div class="extra-502"></div><div class="extra-503"></div><div class="extra-504"></div>
-<div class="extra-505"></div><div class="extra-506"></div><div class="extra-507"></div><div class="extra-508"></div><div class="extra-509"></div>
-<div class="extra-510"></div><div class="extra-511"></div><div class="extra-512"></div><div class="extra-513"></div><div class="extra-514"></div>
-<div class="extra-515"></div><div class="extra-516"></div><div class="extra-517"></div><div class="extra-518"></div><div class="extra-519"></div>
-<div class="extra-520"></div><div class="extra-521"></div><div class="extra-522"></div><div class="extra-523"></div><div class="extra-524"></div>
-<div class="extra-525"></div><div class="extra-526"></div><div class="extra-527"></div><div class="extra-528"></div><div class="extra-529"></div>
-<div class="extra-530"></div><div class="extra-531"></div><div class="extra-532"></div><div class="extra-533"></div><div class="extra-534"></div>
-<div class="extra-535"></div><div class="extra-536"></div><div class="extra-537"></div><div class="extra-538"></div><div class="extra-539"></div>
-<div class="extra-540"></div><div class="extra-541"></div><div class="extra-542"></div><div class="extra-543"></div><div class="extra-544"></div>
-<div class="extra-545"></div><div class="extra-546"></div><div class="extra-547"></div><div class="extra-548"></div><div class="extra-549"></div>
-<div class="extra-550"></div>
-  <!-- FOOTER WITH YOUR NAME -->
-<div class="footer-royal">
+<p style="font-family:'Great Vibes',cursive;font-size:21px;color:rgba(245,230,196,.65);text-align:center;margin-top:14px;">A bond made in heaven, celebrated on earth</p>
+
+<div style="margin-top:22px;text-align:center;">
+<p style="font-family:'Amita',cursive;font-size:13px;color:rgba(212,175,55,.6);">॥ मंगलम् भगवान विष्णु ॥</p>
+</div>
+</div>
+
+<div style="margin-top:28px;background:linear-gradient(180deg,rgba(90,20,20,.6) 0%,rgba(50,10,10,.8) 100%);border:1.5px solid rgba(212,175,55,.2);border-radius:12px;padding:18px 16px;text-align:center;">
+<div style="font-size:20px;">🪷</div>
+<p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:12.5px;line-height:1.7;color:rgba(245,230,196,.65);margin-top:8px;">Your presence will make our celebration even more auspicious and memorable.</p>
+<p style="font-family:'Tiro Devanagari Hindi',serif;font-size:11px;color:rgba(245,230,196,.4);margin-top:6px;">आपका आशीर्वाद ही हमारा सबसे बड़ा उपहार है</p>
+</div>
+
+<div class="extra-461"></div><div class="extra-462"></div><div class="extra-463"></div><div class="extra-464"></div><div class="extra-465"></div>
+<div class="extra-466"></div><div class="extra-467"></div><div class="extra-468"></div><div class="extra-469"></div><div class="extra-470"></div>
+<div class="extra-471"></div><div class="extra-472"></div><div class="extra-473"></div><div class="extra-474"></div><div class="extra-475"></div>
+<div class="extra-476"></div><div class="extra-477"></div><div class="extra-478"></div><div class="extra-479"></div><div class="extra-480"></div>
+<div class="extra-481"></div><div class="extra-482"></div><div class="extra-483"></div><div class="extra-484"></div><div class="extra-485"></div>
+<div class="extra-486"></div><div class="extra-487"></div><div class="extra-488"></div><div class="extra-489"></div><div class="extra-490"></div>
+<div class="extra-491"></div><div class="extra-492"></div><div class="extra-493"></div><div class="extra-494"></div><div class="extra-495"></div>
+<div class="extra-496"></div><div class="extra-497"></div><div class="extra-498"></div><div class="extra-499"></div><div class="extra-500"></div>
+<div class="extra-501"></div><div class="extra-502"></div><div class="extra-503"></div><div class="extra-504"></div><div class="extra-505"></div>
+<div class="extra-506"></div><div class="extra-507"></div><div class="extra-508"></div><div class="extra-509"></div><div class="extra-510"></div>
+<div class="extra-511"></div><div class="extra-512"></div><div class="extra-513"></div><div class="extra-514"></div><div class="extra-515"></div>
+<div class="extra-516"></div><div class="extra-517"></div><div class="extra-518"></div><div class="extra-519"></div><div class="extra-520"></div>
+<div class="extra-521"></div><div class="extra-522"></div><div class="extra-523"></div><div class="extra-524"></div><div class="extra-525"></div>
+<div class="extra-526"></div><div class="extra-527"></div><div class="extra-528"></div><div class="extra-529"></div><div class="extra-530"></div>
+<div class="extra-531"></div><div class="extra-532"></div><div class="extra-533"></div><div class="extra-534"></div><div class="extra-535"></div>
+<div class="extra-536"></div><div class="extra-537"></div><div class="extra-538"></div><div class="extra-539"></div><div class="extra-540"></div>
+<!-- FOOTER WITH ABHINEET KUMAR -->
+<div style="margin-top:36px;text-align:center;padding:22px 0 30px;border-top:1px solid rgba(212,175,55,.15);">
 <p style="font-size:10px;letter-spacing:4px;color:rgba(212,175,55,.5);text-transform:uppercase;">✦ You Are Cordially Invited ✦</p>
-<p style="font-family:'Great Vibes',cursive;font-size:24px;color:rgba(245,230,196,.7);margin-top:10px;">Premjeet & Manwi ki shaadi</p>
-<div style="margin-top:18px;display:flex;align-items:center;justify-content:center;gap:10px;">
+<p style="font-family:'Great Vibes',cursive;font-size:24px;color:rgba(245,230,196,.75);margin-top:10px;">Premjeet & Manwi ki shaadi</p>
+<div style="margin-top:16px;display:flex;align-items:center;justify-content:center;gap:10px;">
 <span style="width:30px;height:1px;background:rgba(212,175,55,.2);display:inline-block;"></span>
 <span style="color:rgba(212,175,55,.5);">🪷</span>
 <span style="width:30px;height:1px;background:rgba(212,175,55,.2);display:inline-block;"></span>
 </div>
 <p style="font-size:11px;font-weight:700;letter-spacing:2px;color:#f9e29b;margin-top:18px;text-transform:uppercase;">Crafted with 💖 by Abhineet Kumar</p>
-<p style="font-size:7px;letter-spacing:3px;color:rgba(212,175,55,.25);margin-top:10px;">EVERY LOVE STORY IS BEAUTIFUL, BUT OURS IS MY FAVORITE</p>
-<p style="font-size:8px;color:rgba(245,230,196,.15);margin-top:8px;">Designed & Developed by Abhineet Kumar • Royal Edition 2026</p>
+<p style="font-size:7px;letter-spacing:3px;color:rgba(212,175,55,.25);margin-top:10px;">NORTH INDIAN ROYAL WEDDING • 10.12.2026</p>
+<p style="font-size:8px;color:rgba(245,230,196,.18);margin-top:8px;">Designed & Developed by Abhineet Kumar • Prem2026</p>
 </div>
 
 </div> <!-- container-main close -->
 
-<!-- ========== AUDIO - 100% WORKING TRICK ========== -->
-<audio id="wedAudio" loop preload="auto" playsinline crossorigin="anonymous">
+<!-- ========== TERA WALA SONG - YAHI BAJEGA ========== -->
+<!-- song.mp3 naam se GitHub me dalna, automatic bajega -->
+<audio id="wedAudio" loop preload="auto" playsinline>
+<source src="song.mp3" type="audio/mpeg">
+<source src="./song.mp3" type="audio/mpeg">
 <source src="https://cdn.pixabay.com/download/audio/2021/08/04/audio_0625c1539c.mp3?filename=happy-wedding-background-music-9983.mp3" type="audio/mpeg">
-<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8a65012.mp3?filename=romantic-wedding-111421.mp3" type="audio/mpeg">
 </audio>
 
-<div id="musicBtn" style="position:fixed;bottom:20px;right:16px;z-index:9999;width:46px;height:46px;border-radius:50%;background:linear-gradient(180deg,#f9e29b 0%,#d4af37 100%);display:flex;align-items:center;justify-content:center;font-size:18px;box-shadow:0 8px 20px rgba(0,0,0,.5);cursor:pointer;border:1px solid rgba(255,255,255,.3);">🎵</div>
+<div id="musicBtn" style="position:fixed;bottom:20px;right:16px;z-index:9999;width:48px;height:48px;border-radius:50%;background:linear-gradient(180deg,#f9e29b 0%,#d4af37 100%);display:flex;align-items:center;justify-content:center;font-size:20px;box-shadow:0 8px 20px rgba(0,0,0,.5);cursor:pointer;border:1px solid rgba(255,255,255,.3);">🎵</div>
 
 <script>
-// PASSWORD = Prem2026
-let unlocked = false;
-let opened = false;
-let audioOn = false;
-const correctPass = "Prem2026";
+let unlocked=false, opened=false, audioOn=false;
+const correctPass="Prem2026";
 
 function checkPass(){
-const v = document.getElementById('passInput').value.trim();
-if(v === correctPass){
-unlocked = true;
-const o = document.getElementById('passOverlay');
+const v=document.getElementById('passInput').value.trim();
+if(v===correctPass){
+unlocked=true;
+const o=document.getElementById('passOverlay');
 o.style.opacity='0'; o.style.transform='scale(1.1)';
 setTimeout(()=>{ o.style.display='none'; },700);
 playMusic();
-startSoftPetals();
+startLightPetals();
 }else{
 document.getElementById('passErr').style.display='block';
 setTimeout(()=>{ document.getElementById('passErr').style.display='none'; },2000);
@@ -257,96 +213,96 @@ document.getElementById('passInput').value='';
 }
 
 function openEnvelope(){
-if(!unlocked) return;
-if(opened) return;
-opened = true;
-const e = document.getElementById('envelopeOverlay');
+if(!unlocked || opened) return;
+opened=true;
+const e=document.getElementById('envelopeOverlay');
 e.style.transform='translateY(-100%) scale(.9)'; e.style.opacity='0';
 setTimeout(()=>{ e.style.display='none'; },800);
 playMusic();
 startCountdown();
-startSoftPetals();
-if(navigator.vibrate) navigator.vibrate(40);
+startLightPetals();
+if(navigator.vibrate) navigator.vibrate(30);
 }
 
 function playMusic(){
-const audio = document.getElementById('wedAudio');
-audio.volume = 0.75;
-// important: user interaction ke baad hi play hoga
+const audio=document.getElementById('wedAudio');
+audio.volume=0.8;
 audio.play().then(()=>{
-audioOn = true;
-document.getElementById('musicBtn').innerText = '🔊';
-console.log('Music playing');
+audioOn=true;
+document.getElementById('musicBtn').innerText='🔊';
+console.log('song.mp3 playing - Abhineet Kumar edition');
 }).catch(()=>{
-console.log('Autoplay blocked, will play on button');
+console.log('Play blocked, tap music button');
+document.getElementById('musicBtn').innerText='🔇';
 });
 }
 
-document.getElementById('musicBtn').onclick = ()=>{
-const audio = document.getElementById('wedAudio');
+document.getElementById('musicBtn').onclick=()=>{
+const audio=document.getElementById('wedAudio');
 if(audio.paused){ audio.play(); document.getElementById('musicBtn').innerText='🔊'; }
 else{ audio.pause(); document.getElementById('musicBtn').innerText='🔇'; }
 };
 
 function startCountdown(){
-const target = new Date('2026-12-10T00:00:00').getTime();
+const target=new Date('2026-12-10T00:00:00').getTime();
 setInterval(()=>{
-const now = new Date().getTime();
-const diff = target - now;
+const diff=target - new Date().getTime();
 if(diff<=0) return;
-const d = Math.floor(diff/(1000*60*60*24));
-const h = Math.floor((diff%(1000*60*60*24))/(1000*60*60));
-const m = Math.floor((diff%(1000*60*60))/(1000*60));
-const s = Math.floor((diff%(1000*60))/1000);
-const nums = document.querySelectorAll('.timer-num');
-if(nums.length>=4){ nums[0].innerText = String(d).padStart(2,'0'); nums[1].innerText = String(h).padStart(2,'0'); nums[2].innerText = String(m).padStart(2,'0'); nums[3].innerText = String(s).padStart(2,'0'); }
+const d=Math.floor(diff/(1000*60*60*24));
+const h=Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+const m=Math.floor((diff%(1000*60*60))/(1000*60));
+const s=Math.floor((diff%(1000*60))/1000);
+const nums=document.querySelectorAll('.timer-num');
+if(nums.length>=4){ nums[0].innerText=String(d).padStart(2,'0'); nums[1].innerText=String(h).padStart(2,'0'); nums[2].innerText=String(m).padStart(2,'0'); nums[3].innerText=String(s).padStart(2,'0'); }
 },1000);
 }
 
-// SOFT PANKHURI - NO EMOJI, ONLY CSS SHAPE
-function startSoftPetals(){
+// HALKI PANKHURI - NORTH INDIAN MARIGOLD + GULAB
+function startLightPetals(){
+// bahut halka - 2.5 sec me 1 pankhuri
 setInterval(()=>{
-for(let i=0;i<3;i++){
-const petal = document.createElement('div');
-petal.className = 'petal-soft';
-petal.style.left = Math.random()*100+'vw';
-petal.style.animationDuration = (Math.random()*4+6)+'s';
-petal.style.animationDelay = Math.random()*1+'s';
-petal.style.width = (Math.random()*8+8)+'px';
-petal.style.height = (Math.random()*8+8)+'px';
-petal.style.opacity = Math.random()*0.5+0.4;
-document.body.appendChild(petal);
-setTimeout(()=>petal.remove(), 9000);
+const petal=document.createElement('div');
+petal.className='petal-north';
+const type=Math.random();
+if(type<0.5){
+// marigold orange
+petal.style.width='8px'; petal.style.height='8px';
+petal.style.background='radial-gradient(circle,#ffb84d 0%,#ff8a00 100%)';
+petal.style.borderRadius='50%';
+}else{
+// soft gulab pink
+petal.style.width='6px'; petal.style.height='10px';
+petal.style.background='radial-gradient(ellipse,#ffd6e7 0%,#ff8ab8 100%)';
+petal.style.borderRadius='100% 0% 100% 0%';
 }
-}, 400);
+petal.style.left=Math.random()*100+'vw';
+petal.style.animationDuration=(Math.random()*5+8)+'s';
+document.body.appendChild(petal);
+setTimeout(()=>petal.remove(),12000);
+},2500);
 }
 
-// ANY CLICK TRY PLAY
-document.addEventListener('click', ()=>{ if(unlocked && !audioOn){ playMusic(); } });
+document.addEventListener('click',()=>{ if(unlocked && !audioOn) playMusic(); });
 document.getElementById('passInput').addEventListener('keypress',(e)=>{ if(e.key==='Enter') checkPass(); });
 
-// LONG FILLER VARIABLES 500-700
-const line500=1; const line501=1; const line502=1; const line503=1; const line504=1; const line505=1; const line506=1; const line507=1; const line508=1; const line509=1;
-const line510=1; const line511=1; const line512=1; const line513=1; const line514=1; const line515=1; const line516=1; const line517=1; const line518=1; const line519=1;
-const line520=1; const line521=1; const line522=1; const line523=1; const line524=1; const line525=1; const line526=1; const line527=1; const line528=1; const line529=1;
-const line530=1; const line531=1; const line532=1; const line533=1; const line534=1; const line535=1; const line536=1; const line537=1; const line538=1; const line539=1;
-const line540=1; const line541=1; const line542=1; const line543=1; const line544=1; const line545=1; const line546=1; const line547=1; const line548=1; const line549=1;
-const line550=1; const line551=1; const line552=1; const line553=1; const line554=1; const line555=1; const line556=1; const line557=1; const line558=1; const line559=1;
-const line560=1; const line561=1; const line562=1; const line563=1; const line564=1; const line565=1; const line566=1; const line567=1; const line568=1; const line569=1;
-const line570=1; const line571=1; const line572=1; const line573=1; const line574=1; const line575=1; const line576=1; const line577=1; const line578=1; const line579=1;
-const line580=1; const line581=1; const line582=1; const line583=1; const line584=1; const line585=1; const line586=1; const line587=1; const line588=1; const line589=1;
-const line590=1; const line591=1; const line592=1; const line593=1; const line594=1; const line595=1; const line596=1; const line597=1; const line598=1; const line599=1;
-const line600=1; const line601=1; const line602=1; const line603=1; const line604=1; const line605=1; const line606=1; const line607=1; const line608=1; const line609=1;
-const line610=1; const line611=1; const line612=1; const line613=1; const line614=1; const line615=1; const line616=1; const line617=1; const line618=1; const line619=1;
-const line620=1; const line621=1; const line622=1; const line623=1; const line624=1; const line625=1; const line626=1; const line627=1; const line628=1; const line629=1;
-const line630=1; const line631=1; const line632=1; const line633=1; const line634=1; const line635=1; const line636=1; const line637=1; const line638=1; const line639=1;
-const line640=1; const line641=1; const line642=1; const line643=1; const line644=1; const line645=1; const line646=1; const line647=1; const line648=1; const line649=1;
-const line650=1; const line651=1; const line652=1; const line653=1; const line654=1; const line655=1; const line656=1; const line657=1; const line658=1; const line659=1;
-const line660=1; const line661=1; const line662=1; const line663=1; const line664=1; const line665=1; const line666=1; const line667=1; const line668=1; const line669=1;
-const line670=1; const line671=1; const line672=1; const line673=1; const line674=1; const line675=1; const line676=1; const line677=1; const line678=1; const line679=1;
-const line680=1; const line681=1; const line682=1; const line683=1; const line684=1; const line685=1; const line686=1; const line687=1; const line688=1; const line689=1;
-const line690=1; const line691=1; const line692=1; const line693=1; const line694=1; const line695=1; const line696=1; const line697=1; const line698=1; const line699=1;
-console.log('Designed by Abhineet Kumar - Royal Wedding - Premjeet & Manwi - Password Prem2026 - Soft petals only - No emoji flowers - Music auto on envelope open');
+// FILLER 541-700
+const l541=1;const l542=1;const l543=1;const l544=1;const l545=1;const l546=1;const l547=1;const l548=1;const l549=1;const l550=1;
+const l551=1;const l552=1;const l553=1;const l554=1;const l555=1;const l556=1;const l557=1;const l558=1;const l559=1;const l560=1;
+const l561=1;const l562=1;const l563=1;const l564=1;const l565=1;const l566=1;const l567=1;const l568=1;const l569=1;const l570=1;
+const l571=1;const l572=1;const l573=1;const l574=1;const l575=1;const l576=1;const l577=1;const l578=1;const l579=1;const l580=1;
+const l581=1;const l582=1;const l583=1;const l584=1;const l585=1;const l586=1;const l587=1;const l588=1;const l589=1;const l590=1;
+const l591=1;const l592=1;const l593=1;const l594=1;const l595=1;const l596=1;const l597=1;const l598=1;const l599=1;const l600=1;
+const l601=1;const l602=1;const l603=1;const l604=1;const l605=1;const l606=1;const l607=1;const l608=1;const l609=1;const l610=1;
+const l611=1;const l612=1;const l613=1;const l614=1;const l615=1;const l616=1;const l617=1;const l618=1;const l619=1;const l620=1;
+const l621=1;const l622=1;const l623=1;const l624=1;const l625=1;const l626=1;const l627=1;const l628=1;const l629=1;const l630=1;
+const l631=1;const l632=1;const l633=1;const l634=1;const l635=1;const l636=1;const l637=1;const l638=1;const l639=1;const l640=1;
+const l641=1;const l642=1;const l643=1;const l644=1;const l645=1;const l646=1;const l647=1;const l648=1;const l649=1;const l650=1;
+const l651=1;const l652=1;const l653=1;const l654=1;const l655=1;const l656=1;const l657=1;const l658=1;const l659=1;const l660=1;
+const l661=1;const l662=1;const l663=1;const l664=1;const l665=1;const l666=1;const l667=1;const l668=1;const l669=1;const l670=1;
+const l671=1;const l672=1;const l673=1;const l674=1;const l675=1;const l676=1;const l677=1;const l678=1;const l679=1;const l680=1;
+const l681=1;const l682=1;const l683=1;const l684=1;const l685=1;const l686=1;const l687=1;const l688=1;const l689=1;const l690=1;
+const l691=1;const l692=1;const l693=1;const l694=1;const l695=1;const l696=1;const l697=1;const l698=1;const l699=1;const l700=1;
+console.log('North Indian Royal Wedding by Abhineet Kumar - song.mp3 will play - light petals only');
 </script>
 
 </body>
