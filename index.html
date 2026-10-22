@@ -11,18 +11,15 @@ body{background:#110209;color:#f5e6c4;font-family:'Montserrat',sans-serif;overfl
 .topbar{position:sticky;top:0;z-index:100;background:rgba(17,2,9,.96);border-bottom:1px solid rgba(212,175,55,.15);padding:10px 14px;display:flex;justify-content:space-between;align-items:center;backdrop-filter:blur(12px)}
 .top-logo{font-family:'Playfair Display',serif;font-weight:800;font-size:11px;color:#f9e29b;letter-spacing:.8px}
 .top-craft{font-size:6px;color:rgba(212,175,55,.4);letter-spacing:1px;margin-top:1px}
+/* 5 HALKI PANKHURI - Bilkul Soft */
 .petals{position:fixed;inset:0;pointer-events:none;z-index:5;overflow:hidden}
-.petal{position:absolute;top:-30px;background:#ffb6c8;border-radius:100% 0 100% 0;transform:rotate(20deg);opacity:.75;animation:fall linear infinite;box-shadow:inset -1px -1px 2px rgba(255,100,130,.3)}
-.petal::after{content:'';position:absolute;inset:1px;background:linear-gradient(135deg,#ff9eb5,#ffc2d1);border-radius:inherit}
-@keyframes fall{0%{transform:translateY(-30px) translateX(0) rotate(0deg);opacity:0}10%{opacity:.8}90%{opacity:.55}100%{transform:translateY(110vh) translateX(50px) rotate(680deg);opacity:0}}
-.petal:nth-child(1){left:7%;width:14px;height:9px;animation-duration:18s}
-.petal:nth-child(2){left:17%;width:10px;height:7px;animation-duration:22s;animation-delay:2s;background:#ffc8d6}
-.petal:nth-child(3){left:32%;width:12px;height:8px;animation-duration:16s;animation-delay:1s}
-.petal:nth-child(4){left:47%;width:9px;height:6px;animation-duration:20s;animation-delay:3s;background:#ffacc0}
-.petal:nth-child(5){left:58%;width:13px;height:9px;animation-duration:19s;animation-delay:.5s}
-.petal:nth-child(6){left:71%;width:8px;height:5px;animation-duration:24s;animation-delay:2.5s}
-.petal:nth-child(7){left:84%;width:11px;height:7px;animation-duration:17s;animation-delay:1.5s}
-.petal:nth-child(8){left:91%;width:7px;height:5px;animation-duration:15s;animation-delay:4s;background:#ffc2d1}
+.petal{position:absolute;top:-30px;background:#ffb6c8;border-radius:100% 0 100% 0;transform:rotate(20deg);opacity:.35;animation:fall linear infinite}
+@keyframes fall{0%{transform:translateY(-30px) translateX(0) rotate(0deg);opacity:0}10%{opacity:.35}80%{opacity:.25}100%{transform:translateY(110vh) translateX(40px) rotate(400deg);opacity:0}}
+.petal:nth-child(1){left:12%;width:12px;height:7px;animation-duration:20s;animation-delay:0s}
+.petal:nth-child(2){left:28%;width:8px;height:5px;animation-duration:26s;animation-delay:4s}
+.petal:nth-child(3){left:50%;width:10px;height:6px;animation-duration:22s;animation-delay:2s}
+.petal:nth-child(4){left:68%;width:9px;height:5px;animation-duration:28s;animation-delay:6s}
+.petal:nth-child(5){left:84%;width:11px;height:6px;animation-duration:24s;animation-delay:1s}
 .pass-overlay{position:fixed;inset:0;z-index:9000;background:#0f0205;display:flex;align-items:center;justify-content:center;transition:.7s}
 .pass-box{width:90%;max-width:340px;background:linear-gradient(180deg,#3d1020 0%,#1a050a 100%);border:1.5px solid rgba(212,175,55,.35);border-radius:18px;padding:26px 20px;text-align:center}
 .pass-input{width:100%;padding:13px;border-radius:28px;border:1.5px solid rgba(212,175,55,.35);background:rgba(0,0,0,.45);color:#f9e29b;text-align:center;letter-spacing:2px;margin-top:16px;outline:none}
@@ -39,14 +36,10 @@ body{background:#110209;color:#f5e6c4;font-family:'Montserrat',sans-serif;overfl
 </style>
 </head>
 <body>
-<div class="petals">
-<div class="petal"></div>
-<div class="petal"></div>
-</div>
+<div class="petals"><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div></div>
 <div id="passOverlay" class="pass-overlay"><div class="pass-box"><div style="font-size:34px">🔒</div><div style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:#f9e29b;margin-top:6px">Shahi Nimantran</div><div style="font-size:8px;letter-spacing:3px;color:rgba(212,175,55,.5);margin-top:4px">ENTER PASSCODE</div><input id="passInput" class="pass-input" type="password" placeholder="Prem2026"><button class="pass-btn" onclick="checkPass()">UNLOCK ✨</button><p id="passErr" style="display:none;color:#ff8a8a;font-size:11px;margin-top:10px">Wrong! Prem2026 likh</p><p style="font-size:6px;color:rgba(245,230,196,.25);margin-top:10px">CRAFTED BY ABHINEET KUMAR</p></div></div>
 <div id="envOverlay" class="env-overlay" onclick="openEnv()"><div class="env-wrap"><div class="env-base"><div class="env-flap"></div><div class="env-thread-v"></div><div class="env-thread-h"></div><div class="env-knot"></div><div class="env-seal">❤</div><div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;z-index:1;padding-top:18px"><div style="font-family:'Playfair Display',serif;font-weight:800;font-size:12px;color:#4a0f14;letter-spacing:1px">PREMJEET & MANWI</div><div style="font-size:6px;color:#8b5a2b;margin-top:2px;letter-spacing:1.5px">10 DEC 2026</div></div></div></div><p style="font-family:'Great Vibes',cursive;font-size:22px;color:rgba(245,230,196,.7);margin-top:22px">Tap to open the royal letter</p><p style="font-size:6px;color:rgba(212,175,55,.3);margin-top:4px;letter-spacing:2px">CRAFTED BY ABHINEET KUMAR</p></div>
 <div class="topbar"><div><div class="top-logo">PREMJEET ❤ MANWI</div><div class="top-craft">CRAFTED BY ABHINEET KUMAR</div></div><a href="#wishes" style="text-decoration:none;background:#d4af37;color:#1a050a;font-size:8px;font-weight:700;padding:5px 11px;border-radius:4px">RSVP NOW</a></div>
-<!-- PAGE 1 : HOME CENTRE ME - Screenshot jaisa -->
 <div id="home" style="max-width:480px;margin:0 auto;padding:0 16px;position:relative;z-index:2;min-height:calc(100vh - 44px);display:flex;flex-direction:column;justify-content:center;align-items:center">
 <div style="width:100%;background:linear-gradient(180deg,#2d0c14 0%,#1a050a 100%);border:1px solid rgba(212,175,55,.28);border-radius:4px;padding:3px;position:relative;box-shadow:0 0 0 1px rgba(212,175,55,.08),0 0 80px rgba(120,40,20,.25)">
 <div style="position:absolute;inset:-30px;background:radial-gradient(ellipse at 50% 50%,rgba(120,60,25,.28) 0%,rgba(80,35,15,.15) 35%,transparent 70%);filter:blur(20px);z-index:-1"></div>
@@ -67,17 +60,15 @@ body{background:#110209;color:#f5e6c4;font-family:'Montserrat',sans-serif;overfl
 </div>
 </div>
 </div>
-
-<!-- PAGE 2 : COUNTDOWN + INVITATION -->
 <div id="page2" style="display:none">
 <div style="background:#15040a;padding:30px 14px 24px;text-align:center;border-top:1px solid rgba(212,175,55,.08);border-bottom:1px solid rgba(212,175,55,.08);position:relative">
 <div style="font-family:'Playfair Display',serif;font-size:19px;font-weight:700;letter-spacing:1px;color:#e8d08a">COUNTING DOWN TO FOREVER 💛</div>
 <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:9px;color:rgba(245,230,196,.45);margin-top:7px">Every passing second brings us closer to our auspicious day.</div>
 <div style="display:flex;gap:8px;justify-content:center;margin-top:18px;max-width:360px;margin-left:auto;margin-right:auto">
-<div style="flex:1;background:#1e080e;border:1px solid rgba(212,175,55,.18);border-radius:7px;padding:11px 4px"><div id="d" class="tm" style="font-family:'Playfair Display',serif;font-size:26px;font-weight:800;color:#e8d08a">48</div><div style="font-size:6px;color:rgba(212,175,55,.5);margin-top:4px">DAYS</div></div>
-<div style="flex:1;background:#1e080e;border:1px solid rgba(212,175,55,.18);border-radius:7px;padding:11px 4px"><div id="h" class="tm" style="font-family:'Playfair Display',serif;font-size:26px;font-weight:800;color:#e8d08a">09</div><div style="font-size:6px;color:rgba(212,175,55,.5);margin-top:4px">HOURS</div></div>
-<div style="flex:1;background:#1e080e;border:1px solid rgba(212,175,55,.18);border-radius:7px;padding:11px 4px"><div id="m" class="tm" style="font-family:'Playfair Display',serif;font-size:26px;font-weight:800;color:#e8d08a">47</div><div style="font-size:6px;color:rgba(212,175,55,.5);margin-top:4px">MINUTES</div></div>
-<div style="flex:1;background:#1e080e;border:1px solid rgba(212,175,55,.18);border-radius:7px;padding:11px 4px"><div id="s" class="tm" style="font-family:'Playfair Display',serif;font-size:26px;font-weight:800;color:#e8d08a">40</div><div style="font-size:6px;color:rgba(212,175,55,.5);margin-top:4px">SECONDS</div></div>
+<div style="flex:1;background:#1e080e;border:1px solid rgba(212,175,55,.18);border-radius:7px;padding:11px 4px"><div id="d" style="font-family:'Playfair Display',serif;font-size:26px;font-weight:800;color:#e8d08a">48</div><div style="font-size:6px;color:rgba(212,175,55,.5);margin-top:4px">DAYS</div></div>
+<div style="flex:1;background:#1e080e;border:1px solid rgba(212,175,55,.18);border-radius:7px;padding:11px 4px"><div id="h" style="font-family:'Playfair Display',serif;font-size:26px;font-weight:800;color:#e8d08a">09</div><div style="font-size:6px;color:rgba(212,175,55,.5);margin-top:4px">HOURS</div></div>
+<div style="flex:1;background:#1e080e;border:1px solid rgba(212,175,55,.18);border-radius:7px;padding:11px 4px"><div id="m" style="font-family:'Playfair Display',serif;font-size:26px;font-weight:800;color:#e8d08a">47</div><div style="font-size:6px;color:rgba(212,175,55,.5);margin-top:4px">MINUTES</div></div>
+<div style="flex:1;background:#1e080e;border:1px solid rgba(212,175,55,.18);border-radius:7px;padding:11px 4px"><div id="s" style="font-family:'Playfair Display',serif;font-size:26px;font-weight:800;color:#e8d08a">40</div><div style="font-size:6px;color:rgba(212,175,55,.5);margin-top:4px">SECONDS</div></div>
 </div>
 </div>
 <div style="background:#0f0205;padding:34px 14px 28px;text-align:center">
