@@ -11,7 +11,6 @@ body{background:#110209;color:#f5e6c4;font-family:'Montserrat',sans-serif;overfl
 .topbar{position:sticky;top:0;z-index:100;background:rgba(17,2,9,.96);border-bottom:1px solid rgba(212,175,55,.15);padding:10px 14px;display:flex;justify-content:space-between;align-items:center;backdrop-filter:blur(12px)}
 .top-logo{font-family:'Playfair Display',serif;font-weight:800;font-size:11px;color:#f9e29b;letter-spacing:.8px}
 .top-craft{font-size:6px;color:rgba(212,175,55,.4);letter-spacing:1px;margin-top:1px}
-/* REAL PINK PETALS - Screenshot jaisi */
 .petals{position:fixed;inset:0;pointer-events:none;z-index:5;overflow:hidden}
 .petal{position:absolute;top:-30px;background:#ffb6c8;border-radius:100% 0 100% 0;transform:rotate(20deg);opacity:.75;animation:fall linear infinite;box-shadow:inset -1px -1px 2px rgba(255,100,130,.3)}
 .petal::after{content:'';position:absolute;inset:1px;background:linear-gradient(135deg,#ff9eb5,#ffc2d1);border-radius:inherit}
@@ -24,90 +23,60 @@ body{background:#110209;color:#f5e6c4;font-family:'Montserrat',sans-serif;overfl
 .petal:nth-child(6){left:71%;width:8px;height:5px;animation-duration:24s;animation-delay:2.5s}
 .petal:nth-child(7){left:84%;width:11px;height:7px;animation-duration:17s;animation-delay:1.5s}
 .petal:nth-child(8){left:91%;width:7px;height:5px;animation-duration:15s;animation-delay:4s;background:#ffc2d1}
-/* PASS */
 .pass-overlay{position:fixed;inset:0;z-index:9000;background:#0f0205;display:flex;align-items:center;justify-content:center;transition:.7s}
 .pass-box{width:90%;max-width:340px;background:linear-gradient(180deg,#3d1020 0%,#1a050a 100%);border:1.5px solid rgba(212,175,55,.35);border-radius:18px;padding:26px 20px;text-align:center}
 .pass-input{width:100%;padding:13px;border-radius:28px;border:1.5px solid rgba(212,175,55,.35);background:rgba(0,0,0,.45);color:#f9e29b;text-align:center;letter-spacing:2px;margin-top:16px;outline:none}
-.pass-btn{width:100%;margin-top:14px;padding:12px;border-radius:28px;border:none;background:linear-gradient(180deg,#f9e29b,#d4af37);color:#4a0f14;font-weight:800;letter-spacing:2px}
-/* CLASSY ENVELOPE WITH DHAGA */
+.pass-btn{width:100%;margin-top:14px;padding:12px;border-radius:28px;border:none;background:linear-gradient(180deg,#f9e29b,#d4af37);color:#4a0f14;font-weight:800;letter-spacing:2px;cursor:pointer}
 .env-overlay{position:fixed;inset:0;z-index:8000;background:radial-gradient(ellipse at center,#1d0a10 0%,#0a0204 70%);display:flex;align-items:center;justify-content:center;flex-direction:column;cursor:pointer;transition:1.2s cubic-bezier(.77,0,.175,1)}
 .env-wrap{position:relative;width:310px;height:200px;animation:envFloat 3s ease-in-out infinite}
 @keyframes envFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
 .env-base{width:100%;height:100%;background:linear-gradient(180deg,#f7e8c8 0%,#e9d5a3 100%);border-radius:8px;position:relative;box-shadow:0 15px 40px rgba(0,0,0,.6),inset 0 0 0 1px rgba(212,175,55,.4);overflow:hidden}
 .env-flap{position:absolute;top:0;left:0;width:100%;height:52%;background:linear-gradient(180deg,#f9eecb 0%,#e5c88a 100%);clip-path:polygon(0 0,100% 0,50% 100%);border-bottom:1px solid rgba(212,175,55,.3);z-index:2}
-.env-thread-v{position:absolute;left:50%;top:0;bottom:0;width:2.5px;background:linear-gradient(180deg,#b17a3a 0%,#d4a060 30%,#8b5a2b 100%);transform:translateX(-50%);z-index:3;box-shadow:0 0 2px rgba(0,0,0,.3)}
+.env-thread-v{position:absolute;left:50%;top:0;bottom:0;width:2.5px;background:linear-gradient(180deg,#b17a3a 0%,#d4a060 30%,#8b5a2b 100%);transform:translateX(-50%);z-index:3}
 .env-thread-h{position:absolute;top:50%;left:0;right:0;height:2.5px;background:linear-gradient(90deg,#b17a3a 0%,#d4a060 50%,#8b5a2b 100%);transform:translateY(-50%);z-index:3}
-.env-knot{position:absolute;left:50%;top:50%;width:22px;height:22px;background:radial-gradient(circle at 35% 35%,#d4a060,#8b5a2b);border-radius:50%;transform:translate(-50%,-50%);z-index:4;box-shadow:0 2px 6px rgba(0,0,0,.4),inset -2px -2px 3px rgba(0,0,0,.3);border:1px solid #6d4a2a}
-.env-knot::after{content:'';position:absolute;width:10px;height:18px;border:1.5px solid #8b5a2b;border-radius:50%;top:16px;left:2px;transform:rotate(-20deg)}
-.env-seal{position:absolute;right:18px;bottom:18px;width:36px;height:36px;background:radial-gradient(circle at 30% 30%,#c0392b,#7a1a14);border-radius:50%;z-index:4;display:flex;align-items:center;justify-content:center;color:#f9e29b;font-size:14px;box-shadow:0 3px 8px rgba(0,0,0,.5),inset 0 1px 2px rgba(255,255,255,.2);border:1px solid rgba(0,0,0,.2)}
+.env-knot{position:absolute;left:50%;top:50%;width:22px;height:22px;background:radial-gradient(circle at 35% 35%,#d4a060,#8b5a2b);border-radius:50%;transform:translate(-50%,-50%);z-index:4;box-shadow:0 2px 6px rgba(0,0,0,.4);border:1px solid #6d4a2a}
+.env-seal{position:absolute;right:18px;bottom:18px;width:36px;height:36px;background:radial-gradient(circle at 30% 30%,#c0392b,#7a1a14);border-radius:50%;z-index:4;display:flex;align-items:center;justify-content:center;color:#f9e29b;font-size:14px;box-shadow:0 3px 8px rgba(0,0,0,.5);border:1px solid rgba(0,0,0,.2)}
 </style>
 </head>
 <body>
-<div class="petals">
-<div class="petal"></div><div class="petal"></div><div class="petal"></div>
-</div>
-<div id="passOverlay" class="pass-overlay">
-<div class="pass-box">
-<div style="font-size:34px">🔒</div>
-<div style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:#f9e29b;margin-top:6px">Shahi Nimantran</div>
-<div style="font-size:8px;letter-spacing:3px;color:rgba(212,175,55,.5);margin-top:4px">ENTER PASSCODE</div>
-<input id="passInput" class="pass-input" type="password" placeholder="Prem2026">
-<button class="pass-btn" onclick="checkPass()">UNLOCK ✨</button>
-<p id="passErr" style="display:none;color:#ff8a8a;font-size:11px;margin-top:10px">Wrong! Prem2026 likh</p>
-<p style="font-size:6px;color:rgba(245,230,196,.25);margin-top:10px">CRAFTED BY ABHINEET KUMAR</p>
-</div>
-</div>
-<div id="envOverlay" class="env-overlay" onclick="openEnv()">
-<div class="env-wrap">
-<div class="env-base">
-<div class="env-flap"></div>
-<div class="env-thread-v"></div>
-<div class="env-thread-h"></div>
-<div class="env-knot"></div>
-<div class="env-seal">❤</div>
-<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;z-index:1;padding-top:18px">
-<div style="font-family:'Playfair Display',serif;font-weight:800;font-size:12px;color:#4a0f14;letter-spacing:1px">PREMJEET & MANWI</div>
-<div style="font-size:6px;color:#8b5a2b;margin-top:2px;letter-spacing:1.5px">10 DEC 2026</div>
+<div class="petals"><div class="petal"></div><div class="petal"></div></div>
+<div id="passOverlay" class="pass-overlay"><div class="pass-box"><div style="font-size:34px">🔒</div><div style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:#f9e29b;margin-top:6px">Shahi Nimantran</div><div style="font-size:8px;letter-spacing:3px;color:rgba(212,175,55,.5);margin-top:4px">ENTER PASSCODE</div><input id="passInput" class="pass-input" type="password" placeholder="Prem2026"><button class="pass-btn" onclick="checkPass()">UNLOCK ✨</button><p id="passErr" style="display:none;color:#ff8a8a;font-size:11px;margin-top:10px">Wrong! Prem2026 likh</p><p style="font-size:6px;color:rgba(245,230,196,.25);margin-top:10px">CRAFTED BY ABHINEET KUMAR</p></div></div>
+<div id="envOverlay" class="env-overlay" onclick="openEnv()"><div class="env-wrap"><div class="env-base"><div class="env-flap"></div><div class="env-thread-v"></div><div class="env-thread-h"></div><div class="env-knot"></div><div class="env-seal">❤</div><div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;z-index:1;padding-top:18px"><div style="font-family:'Playfair Display',serif;font-weight:800;font-size:12px;color:#4a0f14;letter-spacing:1px">PREMJEET & MANWI</div><div style="font-size:6px;color:#8b5a2b;margin-top:2px;letter-spacing:1.5px">10 DEC 2026</div></div></div></div><p style="font-family:'Great Vibes',cursive;font-size:22px;color:rgba(245,230,196,.7);margin-top:22px">Tap to open the royal letter</p><p style="font-size:6px;color:rgba(212,175,55,.3);margin-top:4px;letter-spacing:2px">CRAFTED BY ABHINEET KUMAR</p></div>
+<div class="topbar"><div><div class="top-logo">PREMJEET ❤ MANWI</div><div class="top-craft">CRAFTED BY ABHINEET KUMAR</div></div><a href="#wishes" style="text-decoration:none;background:#d4af37;color:#1a050a;font-size:8px;font-weight:700;padding:5px 11px;border-radius:4px">RSVP NOW</a></div>
+<!-- PAGE 1 : HOME CENTRE ME - Screenshot jaisa -->
+<div id="home" style="max-width:480px;margin:0 auto;padding:0 16px;position:relative;z-index:2;min-height:calc(100vh - 44px);display:flex;flex-direction:column;justify-content:center;align-items:center">
+<div style="width:100%;background:linear-gradient(180deg,#2d0c14 0%,#1a050a 100%);border:1px solid rgba(212,175,55,.28);border-radius:4px;padding:3px;position:relative;box-shadow:0 0 0 1px rgba(212,175,55,.08),0 0 80px rgba(120,40,20,.25)">
+<div style="position:absolute;inset:-30px;background:radial-gradient(ellipse at 50% 50%,rgba(120,60,25,.28) 0%,rgba(80,35,15,.15) 35%,transparent 70%);filter:blur(20px);z-index:-1"></div>
+<span style="position:absolute;top:-8px;left:-8px;width:32px;height:32px;border-top:1.5px solid #e8c875;border-left:1.5px solid #e8c875;z-index:3"></span>
+<span style="position:absolute;top:-8px;right:-8px;width:32px;height:32px;border-top:1.5px solid #e8c875;border-right:1.5px solid #e8c875;z-index:3"></span>
+<span style="position:absolute;bottom:-8px;left:-8px;width:32px;height:32px;border-bottom:1.5px solid #e8c875;border-left:1.5px solid #e8c875;z-index:3"></span>
+<span style="position:absolute;bottom:-8px;right:-8px;width:32px;height:32px;border-bottom:1.5px solid #e8c875;border-right:1.5px solid #e8c875;z-index:3"></span>
+<div style="border:1px solid rgba(212,175,55,.16);border-radius:2px;padding:32px 18px 28px;text-align:center;background:radial-gradient(ellipse at center,rgba(50,14,20,.6) 0%,transparent 75%)">
+<div style="font-size:7px;letter-spacing:2px;color:rgba(212,175,55,.45)">॥ श्री गणेशाय नमः ॥</div>
+<div style="margin-top:6px;font-size:10px;color:#d4af37">👑</div>
+<div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;color:rgba(245,230,196,.75);margin-top:8px">Together with our families</div>
+<div style="margin:8px auto;width:60px;height:1px;background:linear-gradient(90deg,transparent,#d4af37,transparent)"></div>
+<div style="margin-top:12px;font-family:'Playfair Display',serif;font-weight:800;font-size:30px;color:#f5d98f;line-height:1.1;letter-spacing:.5px;text-shadow:0 0 20px rgba(212,175,55,.3)">PREMJEET <span style="font-family:'Great Vibes',cursive;font-weight:400;font-size:28px;color:#e8c875;position:relative"> & <span style="position:absolute;top:-6px;right:-8px;font-size:10px">💕</span></span> MANWI</div>
+<div style="margin-top:14px;font-size:7px;letter-spacing:3.5px;color:rgba(212,175,55,.6);font-weight:600">ARE GETTING MARRIED</div>
+<div style="margin-top:14px;display:inline-block;border-top:1px solid rgba(212,175,55,.25);border-bottom:1px solid rgba(212,175,55,.25);padding:7px 22px;font-size:10px;letter-spacing:2.5px;font-weight:700;color:#f5e6c4">10 DECEMBER 2026</div>
+<div style="margin-top:20px"><button onclick="goToPage2()" style="background:linear-gradient(180deg,#f0d98a 0%,#d4af37 100%);border:none;padding:11px 24px;border-radius:3px;font-size:8.5px;font-weight:800;color:#2a0a12;cursor:pointer;letter-spacing:1px;box-shadow:0 4px 15px rgba(212,175,55,.25)">OPEN OUR WEDDING INVITATION ⌄</button></div>
+<div style="margin-top:8px;font-size:6px;color:rgba(245,230,196,.25);font-style:italic;letter-spacing:.5px">Click to view invitation card & celebrate with us</div>
 </div>
 </div>
-</div>
-<p style="font-family:'Great Vibes',cursive;font-size:22px;color:rgba(245,230,196,.7);margin-top:22px">Tap to open the royal letter</p>
-<p style="font-size:6px;color:rgba(212,175,55,.3);margin-top:4px;letter-spacing:2px">CRAFTED BY ABHINEET KUMAR</p>
-</div>
-<div class="topbar">
-<div><div class="top-logo">PREMJEET ❤ MANWI</div><div class="top-craft">CRAFTED BY ABHINEET KUMAR</div></div>
-<a href="#wishes" style="text-decoration:none;background:#d4af37;color:#1a050a;font-size:8px;font-weight:700;padding:5px 11px;border-radius:4px">RSVP NOW</a>
-</div>
-<!-- PAGE 1 : HOME - Screenshot 1 jaisa -->
-<div id="home" style="max-width:440px;margin:0 auto;padding:24px 14px 36px;position:relative;z-index:2">
-<div style="background:linear-gradient(180deg,#2e0e16 0%,#1a050a 100%);border:1px solid rgba(212,175,55,.22);border-radius:4px;padding:2.5px;position:relative">
-<!-- NATURAL GLOW - Halka soft -->
-<div style="position:absolute;inset:-20px;background:radial-gradient(ellipse at 50% 45%,rgba(80,22,32,.32) 0%,rgba(40,10,15,.14) 38%,transparent 68%);filter:blur(18px);z-index:-1"></div>
-<div style="border:1px solid rgba(212,175,55,.18);border-radius:2px;padding:32px 16px;text-align:center;background:radial-gradient(ellipse at center,rgba(45,12,18,.55) 0%,transparent 72%)">
-<div style="font-size:7px;letter-spacing:2px;color:rgba(212,175,55,.45)">॥ ॐ श्री गणेशाय नमः ॥</div>
-<div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;color:rgba(245,230,196,.7);margin-top:10px">Together with our families</div>
-<div style="margin-top:14px;font-family:'Playfair Display',serif;font-weight:800;font-size:30px;color:#f5d98f;line-height:1.1;letter-spacing:.5px">PREMJEET <span style="font-family:'Great Vibes',cursive;font-weight:400;font-size:26px;color:#e8c875">&</span> MANWI</div>
-<div style="margin-top:12px;font-size:7px;letter-spacing:3px;color:rgba(212,175,55,.55);font-weight:600">ARE GETTING MARRIED</div>
-<div style="margin-top:14px;display:inline-block;border-top:1px solid rgba(212,175,55,.22);border-bottom:1px solid rgba(212,175,55,.22);padding:6px 20px;font-size:10px;letter-spacing:2px;font-weight:600;color:#f5e6c4">10 DECEMBER 2026</div>
-<div style="margin-top:22px"><button onclick="goToPage2()" style="background:linear-gradient(180deg,#f0d98a 0%,#d4af37 100%);border:none;padding:11px 22px;border-radius:4px;font-size:9px;font-weight:800;color:#2a0a12;cursor:pointer;letter-spacing:.5px">💛 OPEN OUR WEDDING INVITATION ⌄</button></div>
-</div>
-</div>
-<div style="text-align:center;margin-top:14px;font-size:6px;color:rgba(212,175,55,.28);letter-spacing:1.5px">❀ SCROLL DOWN TO BEGIN THE CELEBRATION ❀</div>
 </div>
 
-<!-- PAGE 2 : COUNTDOWN + INVITATION - Screenshot 2 jaisa -->
+<!-- PAGE 2 : COUNTDOWN + INVITATION -->
 <div id="page2" style="display:none">
 <div style="background:#15040a;padding:30px 14px 24px;text-align:center;border-top:1px solid rgba(212,175,55,.08);border-bottom:1px solid rgba(212,175,55,.08);position:relative">
 <div style="font-family:'Playfair Display',serif;font-size:19px;font-weight:700;letter-spacing:1px;color:#e8d08a">COUNTING DOWN TO FOREVER 💛</div>
 <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:9px;color:rgba(245,230,196,.45);margin-top:7px">Every passing second brings us closer to our auspicious day.</div>
 <div style="display:flex;gap:8px;justify-content:center;margin-top:18px;max-width:360px;margin-left:auto;margin-right:auto">
-<div style="flex:1;background:#1e080e;border:1px solid rgba(212,175,55,.18);border-radius:7px;padding:11px 4px"><div id="d" class="tm" style="font-family:'Playfair Display',serif;font-size:26px;font-weight:800;color:#e8d08a">48</div><div style="font-size:6px;color:rgba(212,175,55,.5);margin-top:4px;letter-spacing:1px">DAYS</div></div>
-<div style="flex:1;background:#1e080e;border:1px solid rgba(212,175,55,.18);border-radius:7px;padding:11px 4px"><div id="h" class="tm" style="font-family:'Playfair Display',serif;font-size:26px;font-weight:800;color:#e8d08a">09</div><div style="font-size:6px;color:rgba(212,175,55,.5);margin-top:4px;letter-spacing:1px">HOURS</div></div>
-<div style="flex:1;background:#1e080e;border:1px solid rgba(212,175,55,.18);border-radius:7px;padding:11px 4px"><div id="m" class="tm" style="font-family:'Playfair Display',serif;font-size:26px;font-weight:800;color:#e8d08a">47</div><div style="font-size:6px;color:rgba(212,175,55,.5);margin-top:4px;letter-spacing:1px">MINUTES</div></div>
-<div style="flex:1;background:#1e080e;border:1px solid rgba(212,175,55,.18);border-radius:7px;padding:11px 4px"><div id="s" class="tm" style="font-family:'Playfair Display',serif;font-size:26px;font-weight:800;color:#e8d08a">40</div><div style="font-size:6px;color:rgba(212,175,55,.5);margin-top:4px;letter-spacing:1px">SECONDS</div></div>
+<div style="flex:1;background:#1e080e;border:1px solid rgba(212,175,55,.18);border-radius:7px;padding:11px 4px"><div id="d" class="tm" style="font-family:'Playfair Display',serif;font-size:26px;font-weight:800;color:#e8d08a">48</div><div style="font-size:6px;color:rgba(212,175,55,.5);margin-top:4px">DAYS</div></div>
+<div style="flex:1;background:#1e080e;border:1px solid rgba(212,175,55,.18);border-radius:7px;padding:11px 4px"><div id="h" class="tm" style="font-family:'Playfair Display',serif;font-size:26px;font-weight:800;color:#e8d08a">09</div><div style="font-size:6px;color:rgba(212,175,55,.5);margin-top:4px">HOURS</div></div>
+<div style="flex:1;background:#1e080e;border:1px solid rgba(212,175,55,.18);border-radius:7px;padding:11px 4px"><div id="m" class="tm" style="font-family:'Playfair Display',serif;font-size:26px;font-weight:800;color:#e8d08a">47</div><div style="font-size:6px;color:rgba(212,175,55,.5);margin-top:4px">MINUTES</div></div>
+<div style="flex:1;background:#1e080e;border:1px solid rgba(212,175,55,.18);border-radius:7px;padding:11px 4px"><div id="s" class="tm" style="font-family:'Playfair Display',serif;font-size:26px;font-weight:800;color:#e8d08a">40</div><div style="font-size:6px;color:rgba(212,175,55,.5);margin-top:4px">SECONDS</div></div>
 </div>
 </div>
-
 <div style="background:#0f0205;padding:34px 14px 28px;text-align:center">
 <div style="font-size:7px;letter-spacing:3px;color:rgba(212,175,55,.45)">THE AUSPICIOUS BEGINNING</div>
 <div style="margin-top:10px;font-family:'Playfair Display',serif;font-weight:800;font-size:26px;color:#e8d08a;letter-spacing:1px;line-height:1.15">THE ROYAL<br>INVITATION 👑</div>
@@ -125,18 +94,12 @@ body{background:#110209;color:#f5e6c4;font-family:'Montserrat',sans-serif;overfl
 </div>
 </div>
 </div>
-<!-- PAGE 3 : OUR MOMENT - Screenshot 3 jaisa -->
 <div id="page3" style="display:none">
 <div style="background:#0d0205;padding:42px 12px 22px;text-align:center;position:relative">
 <div style="color:#d4af37;font-size:14px">🪷</div>
 <div style="margin-top:6px;font-family:'Playfair Display',serif;font-weight:700;font-size:22px;letter-spacing:1px;color:#e8d08a">OUR BEAUTIFUL MOMENT 💛</div>
 <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:10px;color:rgba(245,230,196,.5);margin-top:8px">"In your eyes, I found my home. In your heart, I found my forever."</div>
-<div style="margin:16px auto;display:flex;align-items:center;justify-content:center;gap:8px;max-width:260px">
-<span style="flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(212,175,55,.22))"></span>
-<span style="color:#d4af37;font-size:7px">◆ 🪷 ◆</span>
-<span style="flex:1;height:1px;background:linear-gradient(90deg,rgba(212,175,55,.22),transparent)"></span>
-</div>
-
+<div style="margin:16px auto;display:flex;align-items:center;justify-content:center;gap:8px;max-width:260px"><span style="flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(212,175,55,.22))"></span><span style="color:#d4af37;font-size:7px">◆ 🪷 ◆</span><span style="flex:1;height:1px;background:linear-gradient(90deg,rgba(212,175,55,.22),transparent)"></span></div>
 <div style="margin:20px auto 0;max-width:310px;position:relative;background:#1a070c;border:1px solid rgba(212,175,55,.22);border-radius:4px">
 <div style="position:absolute;inset:-16px;background:radial-gradient(ellipse at center,rgba(60,15,25,.32) 0%,transparent 70%);filter:blur(14px);z-index:-1"></div>
 <span style="position:absolute;top:-6px;left:-6px;width:36px;height:36px;border-top:1.5px solid #e8d08a;border-left:1.5px solid #e8d08a;border-radius:3px 0 0 0;opacity:.75"></span>
@@ -148,15 +111,11 @@ body{background:#110209;color:#f5e6c4;font-family:'Montserrat',sans-serif;overfl
 <img src="couple.jpg" alt="Premjeet Manwi" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block" onerror="this.style.display='none';document.getElementById('fb2').style.display='flex'">
 <div id="fb2" style="display:none;width:100%;height:100%;align-items:center;justify-content:center;flex-direction:column;background:#1a050a"><div style="font-size:36px">👩‍❤️‍👨</div><p style="font-size:8px;color:#e8d08a;margin-top:6px">couple.jpg yaha dalo</p></div>
 </div>
-<div style="background:#1a070c;padding:9px 6px 11px;text-align:center;border-top:1px solid rgba(212,175,55,.12);margin-top:5px">
-<div style="font-size:7px;letter-spacing:1.5px;font-weight:700;color:#e8d08a">PREMJEET ❤ MANWI</div>
-<div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:5.5px;color:rgba(245,230,196,.35);margin-top:3px">A cherished memory on the path to holy matrimony</div>
-</div>
+<div style="background:#1a070c;padding:9px 6px 11px;text-align:center;border-top:1px solid rgba(212,175,55,.12);margin-top:5px"><div style="font-size:7px;letter-spacing:1.5px;font-weight:700;color:#e8d08a">PREMJEET ❤ MANWI</div><div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:5.5px;color:rgba(245,230,196,.35);margin-top:3px">A cherished memory on the path to holy matrimony</div></div>
 </div>
 </div>
 <div style="margin-top:14px;font-size:6px;letter-spacing:1.5px;color:rgba(212,175,55,.35)">❀ BLESSED WITH LOVE & TOGETHERNESS ❀</div>
 </div>
-
 <div id="wishes" style="background:#0a0204;padding:36px 14px 18px;text-align:center">
 <div style="color:#d4af37;font-size:14px">🪷</div>
 <div style="margin-top:6px;font-family:'Playfair Display',serif;font-weight:800;font-size:22px;color:#e8d08a;line-height:1.2">WILL YOU JOIN OUR<br>CELEBRATION?</div>
@@ -170,13 +129,11 @@ body{background:#110209;color:#f5e6c4;font-family:'Montserrat',sans-serif;overfl
 </div>
 </div>
 </div>
-<!-- PAGE 4 : BLESSINGS - Screenshot 4 jaisa -->
 <div id="page4" style="display:none">
 <div style="background:#0d0205;padding:36px 12px 18px;text-align:center;position:relative">
 <div style="color:#d4af37;font-size:14px">🪷</div>
 <div style="margin-top:6px;font-family:'Playfair Display',serif;font-weight:800;font-size:22px;color:#e8d08a;letter-spacing:.5px">SEND YOUR LOVE & BLESSINGS 💛</div>
 <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:9px;color:rgba(245,230,196,.45);margin-top:6px">Shower Premjeet and Manwi with your warm wishes as they embark on a journey of a lifetime.</div>
-
 <div style="margin:20px auto 0;max-width:380px;background:linear-gradient(180deg,#240c14 0%,#14050a 100%);border:1px solid rgba(212,175,55,.22);border-radius:10px;padding:16px 14px;text-align:left">
 <div style="font-size:10px;font-weight:700;color:#e8d08a;text-align:center;margin-bottom:12px">💖 WRITE A WEDDING BLESSING 💖</div>
 <div style="font-size:7px;font-weight:700;color:rgba(212,175,55,.6);margin-bottom:3px">YOUR NAME *</div>
@@ -186,12 +143,8 @@ body{background:#110209;color:#f5e6c4;font-family:'Montserrat',sans-serif;overfl
 <button style="width:100%;padding:11px;border-radius:16px;border:none;background:linear-gradient(180deg,#f0d98a 0%,#d4af37 100%);color:#2a0a12;font-size:8px;font-weight:800">SEND WEDDING BLESSING ✈</button>
 </div>
 </div>
-
 <div style="padding:20px 12px 10px;background:#0a0204;text-align:left">
-<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
-<div style="font-size:8px;font-weight:700;color:rgba(245,230,196,.6)">◍ CHERISHED BLESSINGS (4)</div>
-<div style="font-size:5px;padding:3px 7px;border-radius:10px;background:rgba(212,175,55,.08);border:1px solid rgba(212,175,55,.15);color:rgba(212,175,55,.4)">🔒 COUPLE / ORGANIZER MODE</div>
-</div>
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px"><div style="font-size:8px;font-weight:700;color:rgba(245,230,196,.6)">◍ CHERISHED BLESSINGS (4)</div><div style="font-size:5px;padding:3px 7px;border-radius:10px;background:rgba(212,175,55,.08);border:1px solid rgba(212,175,55,.15);color:rgba(212,175,55,.4)">🔒 COUPLE / ORGANIZER MODE</div></div>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
 <div style="background:#1a070c;border:1px solid rgba(212,175,55,.12);border-radius:7px;padding:9px"><div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:7.5px;line-height:1.45;color:rgba(245,230,196,.65)">"सदा सुहागन रहो. May Mahadev and Parvati bless Premjeet and Manwi with boundless happiness for seven lifetimes."</div><div style="margin-top:7px;font-size:5px;color:rgba(212,175,55,.55)">❀ GRANDPARENTS & ELDERS</div></div>
 <div style="background:#1a070c;border:1px solid rgba(212,175,55,.12);border-radius:7px;padding:9px"><div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:7.5px;line-height:1.45;color:rgba(245,230,196,.65)">"Watching two beautiful souls unite brings tears of joy. Heartiest congratulations to dear Premjeet and sweet Manwi!"</div><div style="margin-top:7px;font-size:5px;color:rgba(212,175,55,.55)">❀ SHARMA & KUMAR FAMILIES</div></div>
@@ -199,7 +152,6 @@ body{background:#110209;color:#f5e6c4;font-family:'Montserrat',sans-serif;overfl
 <div style="background:#1a070c;border:1px solid rgba(212,175,55,.12);border-radius:7px;padding:9px"><div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:7.5px;line-height:1.45;color:rgba(245,230,196,.65)">"You two are truly made for each other. Wishing you an enchanting wedding day!"</div><div style="margin-top:7px;font-size:5px;color:rgba(212,175,55,.55)">❀ ANANYA & FRIENDS</div></div>
 </div>
 </div>
-
 <div style="background:radial-gradient(ellipse at center,#1e0a10 0%,#0a0204 75%);padding:38px 14px 20px;text-align:center;border-top:1px solid rgba(212,175,55,.08);position:relative">
 <span style="position:absolute;top:12px;left:12px;width:28px;height:28px;border-top:1px solid rgba(212,175,55,.25);border-left:1px solid rgba(212,175,55,.25);border-radius:3px 0 0 0"></span>
 <span style="position:absolute;top:12px;right:12px;width:28px;height:28px;border-top:1px solid rgba(212,175,55,.25);border-right:1px solid rgba(212,175,55,.25);border-radius:0 3px 0 0"></span>
@@ -214,40 +166,15 @@ body{background:#110209;color:#f5e6c4;font-family:'Montserrat',sans-serif;overfl
 </div>
 </div>
 </div>
-
 <audio id="wedAudio" loop preload="auto" playsinline><source src="song.mp3" type="audio/mpeg"></audio>
 <div id="musicBtn" style="position:fixed;bottom:18px;right:12px;z-index:9999;width:42px;height:42px;border-radius:50%;background:linear-gradient(180deg,#f0d98a 0%,#d4af37 100%);display:flex;align-items:center;justify-content:center;font-size:16px;box-shadow:0 6px 16px rgba(0,0,0,.5);cursor:pointer">🎵</div>
-
 <script>
 let unlocked=false, opened=false;
-function checkPass(){
-const v=document.getElementById('passInput').value.trim();
-if(v==="Prem2026"){unlocked=true;const o=document.getElementById('passOverlay');o.style.opacity='0';setTimeout(()=>o.style.display='none',600);}
-else{document.getElementById('passErr').style.display='block';setTimeout(()=>document.getElementById('passErr').style.display='none',2000);document.getElementById('passInput').value='';}
-}
-function openEnv(){
-if(!unlocked||opened) return;opened=true;
-const e=document.getElementById('envOverlay');e.style.transform='translateY(-100%)';e.style.opacity='0';setTimeout(()=>e.style.display='none',1000);
-const a=document.getElementById('wedAudio');a.volume=0.8;a.play().then(()=>musicBtn.innerText='🔊').catch(()=>musicBtn.innerText='🔇');
-startTimer();
-}
-function goToPage2(){
-document.getElementById('page2').style.display='block';
-document.getElementById('page3').style.display='block';
-document.getElementById('page4').style.display='block';
-setTimeout(()=>{document.getElementById('page2').scrollIntoView({behavior:'smooth'})},100);
-}
-document.getElementById('musicBtn').onclick=()=>{
-const a=document.getElementById('wedAudio');if(a.paused){a.play();musicBtn.innerText='🔊'}else{a.pause();musicBtn.innerText='🔇'}
-};
-function startTimer(){
-const target=new Date('2026-12-10T00:00:00').getTime();
-setInterval(()=>{
-const diff=target-Date.now();if(diff<=0) return;
-const d=Math.floor(diff/86400000),h=Math.floor(diff%86400000/3600000),m=Math.floor(diff%3600000/60000),s=Math.floor(diff%60000/1000);
-document.getElementById('d').innerText=String(d).padStart(2,'0');document.getElementById('h').innerText=String(h).padStart(2,'0');document.getElementById('m').innerText=String(m).padStart(2,'0');document.getElementById('s').innerText=String(s).padStart(2,'0');
-},1000);
-}
+function checkPass(){const v=document.getElementById('passInput').value.trim();if(v==="Prem2026"){unlocked=true;const o=document.getElementById('passOverlay');o.style.opacity='0';setTimeout(()=>o.style.display='none',600);}else{document.getElementById('passErr').style.display='block';setTimeout(()=>document.getElementById('passErr').style.display='none',2000);document.getElementById('passInput').value='';}}
+function openEnv(){if(!unlocked||opened) return;opened=true;const e=document.getElementById('envOverlay');e.style.transform='translateY(-100%)';e.style.opacity='0';setTimeout(()=>e.style.display='none',1000);const a=document.getElementById('wedAudio');a.volume=0.8;a.play().then(()=>musicBtn.innerText='🔊').catch(()=>musicBtn.innerText='🔇');startTimer();}
+function goToPage2(){document.getElementById('page2').style.display='block';document.getElementById('page3').style.display='block';document.getElementById('page4').style.display='block';setTimeout(()=>{document.getElementById('page2').scrollIntoView({behavior:'smooth'})},100);}
+document.getElementById('musicBtn').onclick=()=>{const a=document.getElementById('wedAudio');if(a.paused){a.play();musicBtn.innerText='🔊'}else{a.pause();musicBtn.innerText='🔇'}};
+function startTimer(){const target=new Date('2026-12-10T00:00:00').getTime();setInterval(()=>{const diff=target-Date.now();if(diff<=0) return;const d=Math.floor(diff/86400000),h=Math.floor(diff%86400000/3600000),m=Math.floor(diff%3600000/60000),s=Math.floor(diff%60000/1000);document.getElementById('d').innerText=String(d).padStart(2,'0');document.getElementById('h').innerText=String(h).padStart(2,'0');document.getElementById('m').innerText=String(m).padStart(2,'0');document.getElementById('s').innerText=String(s).padStart(2,'0');},1000);}
 document.getElementById('passInput').addEventListener('keypress',e=>{if(e.key==='Enter') checkPass()});
 </script>
 </body>
