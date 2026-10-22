@@ -3,43 +3,91 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Premjeet ❤️ Manwi - Royal Wedding</title>
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+<title>Premjeet & Manwi Wedding</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#1a0508;color:#f5e6c8;font-family:'Playfair Display',serif;overflow-x:hidden}
-.great{font-family:'Great Vibes',cursive}
-.cinzel{font-family:'Cinzel',serif}
-.petals{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999;overflow:hidden}
-.petal{position:absolute;top:-10%;font-size:18px;animation:fall linear infinite}
-@keyframes fall{0%{transform:translateY(-10vh) rotate(0deg) translateX(0);opacity:1}100%{transform:translateY(110vh) rotate(720deg) translateX(100px);opacity:0.8}}
-#envelopeScreen{position:fixed;inset:0;background:radial-gradient(ellipse at center,#4a1520 0%,#1a0508 70%);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:10000;transition:transform 1.2s cubic-bezier(.77,0,.175,1)}
-#envelopeScreen.open{transform:translateY(-100%)}
-.env{width:280px;height:180px;background:linear-gradient(145deg,#3d0f18,#2a0a10);border:2px solid #d4af37;position:relative;cursor:pointer;box-shadow:0 20px 60px rgba(0,0,0,0.8),0 0 30px rgba(212,175,55,0.2);animation:float 3s ease-in-out infinite}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-.env:before{content:'';position:absolute;top:0;left:0;width:0;height:0;border-left:140px solid transparent;border-right:140px solid transparent;border-top:90px solid #d4af37;opacity:0.9}
-.env:after{content:'💌';position:absolute;top:50%;left:50%;transform:translate(-50%,-30%);font-size:50px}
-.seal{position:absolute;bottom:-25px;left:50%;transform:translateX(-50%);width:60px;height:60px;background:radial-gradient(#e8c766,#8a6d2b);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:0 4px 15px rgba(0,0,0,0.5);border:2px solid #5a4a20}
-.tap{margin-top:70px;color:#d4af37;letter-spacing:4px;font-size:0.8rem;animation:blink 1.5s infinite}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:0.4}}
-.hero{min-height:100vh;padding:30px 15px;display:flex;flex-direction:column;align-items:center;background:radial-gradient(circle at center,#4a1520 0%,#1a0508 100%)}
-.orn{width:200px;height:1px;background:linear-gradient(90deg,transparent,#d4af37,transparent);margin:12px 0}
-.frame{width:92%;max-width:400px;border:1.5px solid #d4af37;padding:10px;background:rgba(40,10,15,0.95);box-shadow:0 0 40px rgba(212,175,55,0.25);position:relative;margin:20px 0}
-.frame img{width:100%;border-radius:6px;display:block;border:1px solid #8a6d2b}
-.caption{margin-top:12px;padding-top:10px;border-top:1px solid rgba(212,175,55,0.25)}
-.badge{border:1px solid #d4af37;padding:12px 25px;margin:20px 0;letter-spacing:3px;font-size:0.75rem}
-.countdown{display:flex;gap:12px;margin:20px 0}
-.cd-box{background:rgba(212,175,55,0.08);border:1px solid rgba(212,175,55,0.3);padding:10px 14px;min-width:65px}
-.cd-box b{font-size:1.6rem;display:block;color:#f9e29b}
-.cd-box span{font-size:0.65rem;letter-spacing:2px;color:#d4af37}
-.venue{margin-top:25px;line-height:1.8;font-size:0.95rem}
-.venue b{color:#d4af37;letter-spacing:2px}
-#musicBtn{position:fixed;bottom:20px;right:20px;width:50px;height:50px;border-radius:50%;background:radial-gradient(#e8c766,#8a6d2b);border:2px solid #d4af37;display:flex;align-items:center;justify-content:center;font-size:20px;z-index:100;cursor:pointer;box-shadow:0 4px 20px rgba(0,0,0,0.5)}
+body{background:#1a0508;color:#f5e6c8;font-family:serif;overflow-x:hidden;text-align:center}
+#envScreen{position:fixed;inset:0;background:#1a0508;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9999;transition:all 1s}
+#envScreen.hide{transform:translateY(-100%);opacity:0}
+.petals{position:fixed;inset:0;pointer-events:none;z-index:9998}
+.petal{position:absolute;top:-5%;animation:fall linear infinite}
+@keyframes fall{to{transform:translateY(110vh) rotate(720deg)}}
+.envelope{width:300px;height:200px;background:#2d0e14;border:2px solid #d4af37;position:relative;cursor:pointer;margin:20px auto;box-shadow:0 10px 30px rgba(0,0,0,.6)}
+.envelope-top{position:absolute;top:0;left:0;width:100%;height:50%;background:#d4af37;clip-path:polygon(0 0,50% 100%,100% 0)}
+.seal{position:absolute;bottom:30%;left:50%;transform:translateX(-50%);font-size:40px}
+.tap{color:#d4af37;letter-spacing:3px;margin-top:20px;animation:blink 1.5s infinite}
+@keyframes blink{50%{opacity:.3}}
+.hero{padding:20px;min-height:100vh;background:radial-gradient(circle,#4a1520,#1a0508)}
+.frame{max-width:380px;margin:20px auto;border:2px solid #d4af37;padding:10px;background:#250a0f}
+.frame img{width:100%;display:block}
+.badge{border:1px solid #d4af37;padding:10px;margin:15px auto;max-width:380px;font-size:12px;letter-spacing:2px}
+.count{display:flex;gap:10px;justify-content:center;margin:20px 0}
+.box{border:1px solid #d4af37;padding:8px 12px;min-width:60px;background:rgba(212,175,55,.1)}
+.box b{display:block;font-size:22px;color:#fff}
+.box span{font-size:10px;color:#d4af37}
+#music{position:fixed;bottom:15px;right:15px;width:45px;height:45px;border-radius:50%;background:#d4af37;color:#1a0508;font-size:20px;display:flex;align-items:center;justify-content:center;z-index:100;border:0;cursor:pointer}
 </style>
 </head>
 <body>
 <div class="petals" id="petals"></div>
-<div id="envelopeScreen" onclick="openInvite()">
-  <div style="text-align:center;margin-bottom:30px">
-    <p style="letter-spacing:5px;font-size:0.7rem;opacity:0.7" class="cinzel">YOU ARE INVITED TO</p>
-    <div class="great" style="font-size:
+<div id="envScreen" onclick="openIt()">
+  <p style="letter-spacing:4px;font-size:11px;opacity:.7">YOU ARE INVITED TO</p>
+  <h1 style="font-size:42px;color:#f9e29b;margin:10px 0;font-family:cursive">Premjeet & Manwi</h1>
+  <p style="color:#d4af37;letter-spacing:4px">ROYAL WEDDING</p>
+  <div class="envelope"><div class="envelope-top"></div><div class="seal">💌</div></div>
+  <div class="tap">TAP TO OPEN ❤️</div>
+  <p style="margin-top:15px;font-size:12px;opacity:.6">10th December 2026</p>
+</div>
+<div class="hero">
+  <p style="letter-spacing:4px;font-size:10px;opacity:.6">TOGETHER WITH OUR FAMILIES</p>
+  <h1 style="font-size:38px;color:#f9e29b;margin:10px 0;font-family:cursive">Premjeet & Manwi</h1>
+  <p style="color:#d4af37;letter-spacing:4px;font-size:14px">ROYAL WEDDING</p>
+  <div class="badge">SAVE THE DATE - 10TH DECEMBER 2026 - THURSDAY EVENING</div>
+  <div class="frame">
+    <img src="couple.jpg" alt="Premjeet Manwi">
+    <div style="margin-top:10px;border-top:1px solid rgba(212,175,55,.3);padding-top:8px">
+      <b style="letter-spacing:3px">PREMJEET ❤️ MANWI</b><br>
+      <i style="font-size:11px;color:#d4b87a">A cherished memory on the path to holy matrimony</i>
+    </div>
+  </div>
+  <div class="count" id="count">
+    <div class="box"><b id="d">00</b><span>DAYS</span></div>
+    <div class="box"><b id="h">00</b><span>HOURS</span></div>
+    <div class="box"><b id="m">00</b><span>MINS</span></div>
+    <div class="box"><b id="s">00</b><span>SECS</span></div>
+  </div>
+  <div style="line-height:1.8;margin-top:20px">
+    <b style="color:#d4af37">MEHNDI NIGHT</b><br>9th Dec 2026 • 4PM<br><span style="opacity:.7">Bride's Home</span><br><br>
+    <b style="color:#d4af37">WEDDING CELEBRATION</b><br>10th Dec Evening • 7PM<br><span style="opacity:.7">Grand Venue</span>
+  </div>
+</div>
+<audio id="bgm" loop><source src="song.mp3" type="audio/mpeg"></audio>
+<button id="music" onclick="toggleM()">🎵</button>
+<script>
+const pets=document.getElementById('petals');
+setInterval(()=>{
+  let p=document.createElement('div');p.className='petal';p.innerHTML=['🌹','🥀','🌸'][Math.floor(Math.random()*3)];
+  p.style.left=Math.random()*100+'vw';p.style.animationDuration=(Math.random()*3+4)+'s';p.style.fontSize=(Math.random()*10+16)+'px';
+  pets.appendChild(p);setTimeout(()=>p.remove(),6000);
+},200);
+function openIt(){
+  document.getElementById('envScreen').classList.add('hide');
+  let a=document.getElementById('bgm');a.volume=0.8;a.play().catch(()=>{});
+  document.getElementById('music').innerText='🎶';
+}
+function toggleM(){
+  let a=document.getElementById('bgm');
+  if(a.paused){a.play();document.getElementById('music').innerText='🎶'}else{a.pause();document.getElementById('music').innerText='🔇'}
+}
+let target=new Date('2026-12-10T19:00:00+05:30').getTime();
+setInterval(()=>{
+  let diff=target-Date.now();
+  if(diff<=0){document.getElementById('count').innerHTML='<b>IT IS OUR WEDDING DAY! 💍</b>';return}
+  document.getElementById('d').innerText=Math.floor(diff/86400000);
+  document.getElementById('h').innerText=Math.floor(diff%86400000/3600000);
+  document.getElementById('m').innerText=Math.floor(diff%3600000/60000);
+  document.getElementById('s').innerText=Math.floor(diff%60000/1000);
+},1000);
+</script>
+</body>
+</html>
